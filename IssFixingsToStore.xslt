@@ -7,7 +7,7 @@
             <Body_Pocket>
             <xsl:for-each select="//row">
                 <xsl:if test="not(@value='0')">
-                    <xsl:if test="(@secid=&quot;fixing&quot;) or (@group=&quot;rates&quot;) or (@group=&quot;discount_curves&quot;)">
+                    <xsl:if test="(@secid=&quot;fixing&quot;) or (@group=&quot;rates&quot;) or (@group=&quot;discount_curves&quot;) or (@group=&quot;forward_curves&quot;) or (@secid=&quot;swap_pp&quot;)">
                         <Object Name="QUOTATION">
                             <Property Name ="MARKET_SHORT">
                                 <xsl:value-of select="'MICEX'"/>
@@ -16,14 +16,14 @@
                                 <xsl:value-of select="'MICEX'"/>
                             </Property>
                             <Property Name ="TRADING_PLACE_SHORT">
-                                <xsl:value-of select="'MICEX'"/>
+                                <xsl:value-of select="'MAIN'"/>
                             </Property>
                             <Property Name ="TRADING_PLACE_NAME">
-                                <xsl:value-of select="'MICEX'"/>
+                                <xsl:value-of select="'MAIN'"/>
                             </Property>
                             <Property Name ="INSTRUMENT_SHORT">
                                 <xsl:choose>
-                                    <xsl:when test="@secid = &quot;fixing&quot;">
+                                    <xsl:when test="(@secid = &quot;fixing&quot;)  or (@group=&quot;discount_curves&quot;) or (@group=&quot;forward_curves&quot;) or (@secid=&quot;swap_pp&quot;)">
                                         <xsl:value-of select="@group"/>
                                         <xsl:text>_</xsl:text>
                                         <xsl:value-of select="@secid"/>
@@ -39,7 +39,7 @@
                             </Property>
                             <Property Name ="INSTRUMENT_NAME">
                                 <xsl:choose>
-                                    <xsl:when test="@secid = &quot;fixing&quot;">
+                                    <xsl:when test="(@secid = &quot;fixing&quot;) or (@group=&quot;discount_curves&quot;) or (@group=&quot;forward_curves&quot;) or (@secid=&quot;swap_pp&quot;)">
                                         <xsl:value-of select="@group"/>
                                         <xsl:text>_</xsl:text>
                                         <xsl:value-of select="@secid"/>
@@ -80,9 +80,18 @@
                                     </xsl:otherwise>
                                 </xsl:choose>
                             </Property>
-                            <Property Name ="MARKETPRICE">
+                            <Property Name ="OFFER">
                                 <xsl:choose>
-                                    <xsl:when test="not(@secid = &quot;fixing&quot;)">
+                                    <xsl:when test="@secid = &quot;fixing&quot;">
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:value-of select="@value"/>
+                                    </xsl:otherwise>
+                                </xsl:choose>
+                            </Property>
+							<Property Name ="MARKETPRICE">
+                                <xsl:choose>
+                                    <xsl:when test="@secid != &quot;fixing&quot;">
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <xsl:value-of select="@value"/>
