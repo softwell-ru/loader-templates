@@ -22,36 +22,18 @@
                                 <xsl:value-of select="'MAIN'"/>
                             </Property>
                             <Property Name ="INSTRUMENT_SHORT">
-                                <xsl:choose>
-                                    <xsl:when test="(@secid = &quot;fixing&quot;)  or (@group=&quot;discount_curves&quot;) or (@group=&quot;forward_curves&quot;) or (@secid=&quot;swap_pp&quot;)">
-                                        <xsl:value-of select="@group"/>
-                                        <xsl:text>_</xsl:text>
-                                        <xsl:value-of select="@secid"/>
-                                        <xsl:text>_</xsl:text>
-                                        <xsl:value-of select="@term"/>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:value-of select="@secid"/>
-                                        <xsl:text>_</xsl:text>
-                                        <xsl:value-of select="@term"/>
-                                    </xsl:otherwise>
-                                </xsl:choose>
+                                <xsl:value-of select="@group"/>
+                                <xsl:text>_</xsl:text>
+                                <xsl:value-of select="@secid"/>
+                                <xsl:text>_</xsl:text>
+                                <xsl:value-of select="@term"/>
                             </Property>
                             <Property Name ="INSTRUMENT_NAME">
-                                <xsl:choose>
-                                    <xsl:when test="(@secid = &quot;fixing&quot;) or (@group=&quot;discount_curves&quot;) or (@group=&quot;forward_curves&quot;) or (@secid=&quot;swap_pp&quot;)">
-                                        <xsl:value-of select="@group"/>
-                                        <xsl:text>_</xsl:text>
-                                        <xsl:value-of select="@secid"/>
-                                        <xsl:text>_</xsl:text>
-                                        <xsl:value-of select="@term"/>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:value-of select="@secid"/>
-                                        <xsl:text>_</xsl:text>
-                                        <xsl:value-of select="@term"/>
-                                    </xsl:otherwise>
-                                </xsl:choose>
+                                <xsl:value-of select="@group"/>
+                                <xsl:text>_</xsl:text>
+                                <xsl:value-of select="@secid"/>
+                                <xsl:text>_</xsl:text>
+                                <xsl:value-of select="@term"/>
                             </Property>
                             <Property Name ="C$DATE">
                                 <xsl:value-of select="@tradedate"/>
