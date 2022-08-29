@@ -31,7 +31,7 @@
 					<Property Name ="CURRENCYID">
 						<xsl:value-of select="'RUB'"/>
 					</Property>
-					<Property Name ="MARKETPRICE">
+					<Property Name ="LAST_PRICE">
 						<xsl:value-of select="."/>
 					</Property>
 					<Property Name ="INSTRUMENT_SHORT">
