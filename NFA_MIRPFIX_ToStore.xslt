@@ -39,7 +39,7 @@
 					<Property Name ="OFFER">
 						<xsl:value-of select="td[6]"/>
 					</Property>
-					<Property Name ="MARKETPRICE">
+					<Property Name ="LAST_PRICE">
 						<xsl:value-of select="td[6]"/>
 					</Property>
 					<Property Name ="C$DATE">
