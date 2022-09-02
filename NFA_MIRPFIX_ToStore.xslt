@@ -30,15 +30,6 @@
 					<Property Name ="INSTRUMENT_NAME">
 						<xsl:value-of select="td[3]"/>
 					</Property>
-					<Property Name ="BID">
-                        <xsl:value-of select="td[6]"/>
-					</Property>
-					<Property Name ="ASK">
-						<xsl:value-of select="td[6]"/>
-					</Property>
-					<Property Name ="OFFER">
-						<xsl:value-of select="td[6]"/>
-					</Property>
 					<Property Name ="LAST_PRICE">
 						<xsl:value-of select="td[6]"/>
 					</Property>
