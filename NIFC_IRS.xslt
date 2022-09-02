@@ -35,7 +35,7 @@
                             </xsl:for-each>
                         </Property>
                         <Property Name ="OFFER">
-                            <xsl:for-each select="../../graphs/graph[@gid='0']">
+                            <xsl:for-each select="../../graphs/graph[@gid='2']">
                                 <xsl:value-of select="value[@xid=$valid]"/>
                             </xsl:for-each>
                         </Property>
