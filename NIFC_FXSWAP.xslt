@@ -64,7 +64,7 @@
                             <xsl:value-of select="'NIFC'"/>
                         </Property>
                         <Property Name ="C$DATE">
-                        <xsl:value-of select="valueDate"/>
+                        <xsl:value-of select="../showDateCN"/>
                         </Property>
                         <Property Name ="C$PROOF">
                             <xsl:value-of select="1"/>
