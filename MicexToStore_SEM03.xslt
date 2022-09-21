@@ -315,11 +315,7 @@
 						</xsl:if>
 						<xsl:if test="@OutStandingReturnValue or @RepoRate or @RepoValue">
 							<Property Name="SETTLE_DATE_FACT">
-								<xsl:value-of select="format-number(number(substring(../../../@SettleDate, 1, 4)), '0000')"/>
-								<xsl:text>-</xsl:text>
-								<xsl:value-of select="format-number(number(substring(../../../@SettleDate, 6, 2)), '00')"/>
-								<xsl:text>-</xsl:text>
-								<xsl:value-of select="format-number(number(substring(../../../@SettleDate, 9, 2)), '00')"/>
+								<xsl:value-of select="'null'"/>	
 							</Property>
 						</xsl:if>
 						<xsl:if test="@OutStandingReturnValue or @RepoRate or @RepoValue">
