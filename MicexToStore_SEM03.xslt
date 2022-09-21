@@ -314,11 +314,6 @@
 							</Property>
 						</xsl:if>
 						<xsl:if test="@OutStandingReturnValue or @RepoRate or @RepoValue">
-							<Property Name="SETTLE_DATE_FACT">
-								<xsl:value-of select="'null'"/>	
-							</Property>
-						</xsl:if>
-						<xsl:if test="@OutStandingReturnValue or @RepoRate or @RepoValue">
 							<Property Name="PARENTTRADENO">
 								<xsl:value-of select="@TradeNo"/>
 							</Property>
