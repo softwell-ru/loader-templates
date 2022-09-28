@@ -6,7 +6,7 @@
             <xsl:if test="contains(Property[@Name='Security Description'], 'FX Swap')">
                 <Object Name="QUOTATION">
                     <Property Name ="MARKET_SHORT">
-                        <xsl:value-of select="'RN'"/>
+                        <xsl:value-of select="'RUDATA'"/>
                     </Property>
                     <Property Name ="MARKET_NAME">
                         <xsl:value-of select="'MAIN'"/>
@@ -15,13 +15,13 @@
                         <xsl:value-of select="'MAIN'"/>
                     </Property>
                     <Property Name ="TRADING_PLACE_NAME">
-                        <xsl:value-of select="'RN'"/>
+                        <xsl:value-of select="'RUDATA'"/>
                     </Property>
                     <Property Name ="C$PROOF">
                         <xsl:value-of select="1"/>
                     </Property>
                     <Property Name ="OFFER">
-                        <xsl:value-of select="Property[@Name='Bid Price']"/>
+                        <xsl:value-of select="Property[@Name='Ask Price']"/>
                     </Property>
                     <Property Name ="BID">
                         <xsl:value-of select="Property[@Name='Bid Price']"/>
