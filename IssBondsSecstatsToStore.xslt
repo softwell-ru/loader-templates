@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="windows-1251"?>
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:p1="http://xecdapi.xe.com">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="xml" encoding="windows-1251"/>
     <xsl:strip-space elements="*"/>
-    <xsl:template match="data">
+    <xsl:template match="data[@id='marketdata_yields']"/>
+    <xsl:template match="data[@id='secstats' or @id='marketdata']">
 		<Pocket>
             <Body_Pocket>
             <xsl:for-each select="//row">
