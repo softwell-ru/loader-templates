@@ -36,10 +36,10 @@
                         <xsl:value-of select="1"/>
                     </Property>
                     <Property Name ="BID">
-                        <xsl:value-of select="@HIGHBID"/>
+                        <xsl:value-of select="@BID"/>
                     </Property>
                     <Property Name ="ASK">
-                        <xsl:value-of select="@LOWOFFER"/>
+                        <xsl:value-of select="@OFFER"/>
                     </Property>
                     <Property Name ="LOW">
                         <xsl:value-of select="@LOW"/>
@@ -51,11 +51,16 @@
                         <xsl:value-of select="@OPEN"/>
                     </Property>
                     <Property Name ="OFFER">
-                        <xsl:value-of select="@LOWOFFER"/>
+                        <xsl:value-of select="@OFFER"/>
                     </Property>
                     <Property Name ="LOWOFFER">
                         <xsl:value-of select="@LOWOFFER"/>
                     </Property>
+
+					<Property Name ="HIGHBID">
+                        <xsl:value-of select="@HIGHBID"/>
+                    </Property>
+
                     <Property Name ="NUMTRADES">
                         <xsl:value-of select="@NUMTRADES"/>
                     </Property>
