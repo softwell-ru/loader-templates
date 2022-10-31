@@ -67,8 +67,14 @@
 						<xsl:value-of select="basket"/>
 						<xsl:text>-</xsl:text>
 						<xsl:value-of select="ratetype"/>
-						<xsl:text>-</xsl:text>
-						<xsl:value-of select="baseflrate"/>
+						<xsl:choose>
+							<xsl:when test="baseflrate=&quot;-&quot;">
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:text>-</xsl:text>
+								<xsl:value-of select="baseflrate"/>
+							</xsl:otherwise>
+						</xsl:choose>
 					</Property>
 					<Property Name ="REPOVALUE">
 						<xsl:value-of select="totalaccept"/>
