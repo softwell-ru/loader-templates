@@ -11,7 +11,7 @@
 							<xsl:value-of select="'MICEX'"/>
 						</Property>
 						<Property Name="MARKET_NAME">
-							<xsl:value-of select="'ллба'"/>
+							<xsl:value-of select="'О©╫О©╫О©╫О©╫'"/>
 						</Property>
 						<Property Name="TRADING_PLACE_SHORT">
 							<xsl:value-of select="../@BoardId"/>
@@ -26,7 +26,7 @@
 							<xsl:value-of select="@SecShortName"/>
 						</Property>
 						<Property Name="C$DATE">
-							<xsl:value-of select="../../@TradeDate"/>
+							<xsl:value-of select="../../../@TradeDate"/>
 						</Property>
 						<Property Name="REGNUMBER">
 							<xsl:value-of select="@RegNumber"/>
