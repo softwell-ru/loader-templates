@@ -11,7 +11,7 @@
 							<xsl:value-of select="'MICEX'"/>
 						</Property>
 						<Property Name="MARKET_NAME">
-							<xsl:value-of select="'ллба'"/>
+							<xsl:value-of select="'О©╫О©╫О©╫О©╫'"/>
 						</Property>
 						<Property Name="TRADING_PLACE_SHORT">
 							<xsl:value-of select="../@BoardId"/>
@@ -51,6 +51,12 @@
 									<xsl:value-of select="&quot;RUB&quot;"/>
 								</xsl:when>
 								<xsl:when test="@CurrencyId = &quot;SUR&quot;">
+									<xsl:value-of select="&quot;RUB&quot;"/>
+								</xsl:when>
+								<xsl:when test="(@SecurityType = &quot;&#x043e;&#x0431;&quot;) and (@FaceUnit = &quot;RUR&quot;)">
+									<xsl:value-of select="&quot;RUB&quot;"/>
+								</xsl:when>
+								<xsl:when test="(@SecurityType = &quot;&#x043e;&#x0431;&quot;) and (@FaceUnit = &quot;SUR&quot;)">
 									<xsl:value-of select="&quot;RUB&quot;"/>
 								</xsl:when>
 								<xsl:otherwise>
