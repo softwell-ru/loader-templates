@@ -7,14 +7,61 @@
 			<xsl:for-each select="./*">
 				<xsl:variable name="currency" select="cur" />
 				<Object Name="DEAL">
+					
+					<Property Name="MARKET_SHORT">
+						<xsl:value-of select="'MICEX'"/>
+					</Property>
+					<Property Name="MARKET_NAME">
+						<xsl:value-of select="'Московская Биржа'"/>
+					</Property>
+					<Property Name="TRADING_PLACE_SHORT">
+						<xsl:value-of select="'ROSKAZNA-REPOAUC-NEORG'"/>
+					</Property>
+					<Property Name="TRADING_PLACE_NAME">
+						<xsl:value-of select="'ROSKAZNA-REPOAUC-NEORG'"/>
+					</Property>
+					<Property Name="STARTDISCOUNT">
+						<xsl:value-of select="'0'"/>
+					</Property>
+					<Property Name="PARENTTRADENO">
+						<xsl:value-of select="id"/>
+					</Property>
+					
+					<Property Name ="INSTRUMENT_SHORT">
+						<xsl:value-of select="basket"/>
+						<xsl:text>-</xsl:text>
+						<xsl:value-of select="ratetype"/>
+						<xsl:choose>
+							<xsl:when test="baseflrate=&quot;-&quot;">
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:text>-</xsl:text>
+								<xsl:value-of select="baseflrate"/>
+							</xsl:otherwise>
+						</xsl:choose>
+					</Property>
+					<Property Name ="INSTRUMENT_NAME">
+						<xsl:value-of select="basket"/>
+						<xsl:text>-</xsl:text>
+						<xsl:value-of select="ratetype"/>
+						<xsl:choose>
+							<xsl:when test="baseflrate=&quot;-&quot;">
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:text>-</xsl:text>
+								<xsl:value-of select="baseflrate"/>
+							</xsl:otherwise>
+						</xsl:choose>
+					</Property>					
+					
 					<Property Name ="TRADE_NUMBER">
 						<xsl:value-of select="id"/>
 					</Property>
 					<Property Name ="TRADE_SIDE">
-						<xsl:value-of select="'RREPO'"/>
+						<xsl:value-of select="'SELL'"/>
 					</Property>
 					<Property Name ="TRADE_ACCOUNT">
-						<xsl:value-of select="'ROSKAZNA.GOV'"/>
+						<xsl:value-of select="'ROSKAZNA-REPOAUC-NEORG.GOV'"/>
 					</Property>
 					<Property Name ="TRADE_PRICE">
 						<xsl:value-of select="totalaccept"/>
@@ -26,8 +73,6 @@
 						<xsl:value-of select="totalaccept"/>
 					</Property>
 					<Property Name ="TRADE_REF">
-						<xsl:value-of select="list"/>
-						<xsl:text> </xsl:text>
 						<xsl:value-of select="startdisc"/>
 					</Property>
 					<Property Name ="CPFIRMID">
@@ -63,19 +108,7 @@
 						<xsl:text>-</xsl:text>
 						<xsl:value-of select="format-number(number(substring(firstdate, 1, 2)), '00')"/>
 					</Property>
-					<Property Name ="INSTRUMENT_ID">
-						<xsl:value-of select="basket"/>
-						<xsl:text>-</xsl:text>
-						<xsl:value-of select="ratetype"/>
-						<xsl:choose>
-							<xsl:when test="baseflrate=&quot;-&quot;">
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:text>-</xsl:text>
-								<xsl:value-of select="baseflrate"/>
-							</xsl:otherwise>
-						</xsl:choose>
-					</Property>
+					
 					<Property Name ="REPOVALUE">
 						<xsl:value-of select="totalaccept"/>
 					</Property>
@@ -100,7 +133,7 @@
 						</xsl:choose>
 					</Property>
 					<Property Name ="DVP">
-						<xsl:value-of select="'DVP'"/>
+						<xsl:value-of select="'TRUE'"/>
 					</Property>
 					<Property Name ="QTYTYPE">
 						<xsl:value-of select="'1'"/>
@@ -122,9 +155,7 @@
 						<xsl:text>-</xsl:text>
 						<xsl:value-of select="format-number(number(substring(seconddate, 1, 2)), '00')"/>
 					</Property>
-					<Property Name ="DELIVERY_TYPE">
-						<xsl:value-of select="settletype"/>
-					</Property>
+					
 				</Object>
 			</xsl:for-each>
 		</Body_Pocket>
