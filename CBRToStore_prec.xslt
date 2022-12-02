@@ -66,6 +66,13 @@
 							<xsl:with-param name="newValue" select="'.'" />
 						</xsl:call-template>
 					</Property>
+					<Property Name ="LAST_PRICE">
+						<xsl:call-template name="StringReplace">
+							<xsl:with-param name="input" select="Buy" />
+							<xsl:with-param name="oldValue" select="','" />
+							<xsl:with-param name="newValue" select="'.'" />
+						</xsl:call-template>
+					</Property>
 					<Property Name ="FACEVALUE">
 						<xsl:value-of select="1"/>
 					</Property>
