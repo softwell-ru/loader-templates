@@ -15,10 +15,10 @@
 						<xsl:value-of select="'Московская Биржа'"/>
 					</Property>
 					<Property Name="TRADING_PLACE_SHORT">
-						<xsl:value-of select="'ROSKAZNA-REPOAUC-NEORG'"/>
+						<xsl:value-of select="'REPO-AU-NORG'"/>
 					</Property>
 					<Property Name="TRADING_PLACE_NAME">
-						<xsl:value-of select="'ROSKAZNA-REPOAUC-NEORG'"/>
+						<xsl:value-of select="'REPO-AU-NORG'"/>
 					</Property>
 					<Property Name="STARTDISCOUNT">
 						<xsl:value-of select="'0'"/>
