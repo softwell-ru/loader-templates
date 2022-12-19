@@ -79,7 +79,7 @@
 					<xsl:value-of select="Property[@Name='UserId']"/>
 				</Property>
 				<Property Name="TRADE_FIRMID">
-					<xsl:value-of select="Property[@Name='FirmID']"/>
+					<xsl:value-of select="Property[@Name='CPFirmId']"/>
 				</Property>
 				<xsl:if test="(Property[@Name='BrokerRef']) and not (Property[@Name='BrokerRef'] = '')">
 					<Property Name="TRADE_REF">
