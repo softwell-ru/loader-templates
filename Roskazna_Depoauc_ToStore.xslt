@@ -7,6 +7,18 @@
 			<xsl:for-each select="./*">
 				<xsl:variable name="currency" select="cur" />
 				<Object Name="DEAL">
+					<Property Name="MARKET_SHORT">
+						<xsl:value-of select="'MICEX'"/>
+					</Property>
+					<Property Name="MARKET_NAME">
+						<xsl:value-of select="'Московская Биржа'"/>
+					</Property>
+					<Property Name="TRADING_PLACE_SHORT">
+						<xsl:value-of select="'DP-AU-ORG'"/>
+					</Property>
+					<Property Name="TRADING_PLACE_NAME">
+						<xsl:value-of select="'DP-AU-ORG'"/>
+					</Property>
 					<Property Name ="TRADE_NUMBER">
 						<xsl:value-of select="id"/>
 					</Property>
