@@ -80,6 +80,12 @@
 						<xsl:text>-</xsl:text>
 						<xsl:value-of select="ratetype"/>
 					</Property>
+					<Property Name ="INSTRUMENT_NAME">
+						<xsl:value-of select="'RUB'"/>
+					</Property>
+					<Property Name ="INSTRUMENT_SHORT">
+						<xsl:value-of select="'RUB'"/>
+					</Property>
 					<Property Name ="REPOVALUE">
 						<xsl:value-of select="totalaccept"/>
 					</Property>
@@ -94,14 +100,7 @@
 						</xsl:choose>
 					</Property>
 					<Property Name ="PRICE_CURRENCY">
-						<xsl:choose>
-							<xsl:when test="$currency=&quot;&#x0440;&#x0443;&#x0431;&#x043b;&#x0438;&quot;">
-								<xsl:value-of select="&quot;RUB&quot;"/>
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:value-of select="cur"/>
-							</xsl:otherwise>
-						</xsl:choose>
+						<xsl:value-of select="&quot;RUB&quot;"/>
 					</Property>
 					<Property Name ="DVP">
 						<xsl:value-of select="'DVP'"/>
