@@ -12,7 +12,7 @@
 						<xsl:value-of select="'MICEX'"/>
 					</Property>
 					<Property Name="MARKET_NAME">
-						<xsl:value-of select="'Московская Биржа'"/>
+						<xsl:value-of select="'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ'"/>
 					</Property>
 					<Property Name="TRADING_PLACE_SHORT">
 						<xsl:value-of select="'REPO-AU-ORG'"/>
@@ -53,12 +53,14 @@
 						</xsl:choose>
 					</Property>
 					
-					
+                    <Property Name ="TRADE_FIRMID ">
+                        <xsl:value-of select="'MINFIN'"/>
+                    </Property>					
 					<Property Name ="TRADE_NUMBER">
 						<xsl:value-of select="id"/>
 					</Property>
 					<Property Name ="TRADE_SIDE">
-						<xsl:value-of select="'SELL'"/>
+						<xsl:value-of select="'BUY'"/>
 					</Property>
 					<Property Name ="TRADE_ACCOUNT">
 						<xsl:value-of select="'ROSKAZNA-REPOAUC-ORG'"/>
