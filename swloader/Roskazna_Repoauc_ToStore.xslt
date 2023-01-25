@@ -12,7 +12,7 @@
 						<xsl:value-of select="'MICEX'"/>
 					</Property>
 					<Property Name="MARKET_NAME">
-						<xsl:value-of select="'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ'"/>
+						<xsl:value-of select="'Московская Биржа'"/>
 					</Property>
 					<Property Name="TRADING_PLACE_SHORT">
 						<xsl:value-of select="'REPO-AU-NORG'"/>
