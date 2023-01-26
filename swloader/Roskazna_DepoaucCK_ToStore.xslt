@@ -35,7 +35,7 @@
 						<xsl:value-of select="'1'"/>
 					</Property>
 					<Property Name ="TRADE_VALUE">
-						<xsl:value-of select="totalaccept"/>
+						<xsl:value-of select="maxvol"/>
 					</Property>
 					<Property Name ="TRADE_REF">
 						<xsl:value-of select="FundsPlaced"/>
