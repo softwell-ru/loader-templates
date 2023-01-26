@@ -35,7 +35,9 @@
 						<xsl:value-of select="'1'"/>
 					</Property>
 					<Property Name ="TRADE_VALUE">
-						<xsl:value-of select="maxvol"/>
+						<xsl:variable name="maxvol" select="translate(maxvol, ' ', '')"/>
+						<xsl:variable name="maxvol1" select="number($maxvol)"/>
+						<xsl:value-of select="format-number($maxvol1*1000000, '#')"/>
 					</Property>
 					<Property Name ="TRADE_REF">
 						<xsl:value-of select="FundsPlaced"/>
