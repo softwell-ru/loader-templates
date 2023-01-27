@@ -23,7 +23,7 @@
 						<xsl:value-of select="id"/>
 					</Property>
 					<Property Name ="TRADE_SIDE">
-						<xsl:value-of select="'BUY'"/>
+						<xsl:value-of select="'SELL'"/>
 					</Property>
 					<Property Name ="TRADE_ACCOUNT">
 						<xsl:value-of select="'ROSKAZNA.GOV.CK'"/>
