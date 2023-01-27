@@ -29,15 +29,15 @@
 						<xsl:value-of select="'ROSKAZNA.GOV.CK'"/>
 					</Property>
 					<Property Name ="TRADE_PRICE">
-						<xsl:value-of select="minrate"/>
+						<xsl:value-of select="waacceptrate"/>
 					</Property>
 					<Property Name ="TRADE_QUANTITY">
 						<xsl:value-of select="'1'"/>
 					</Property>
 					<Property Name ="TRADE_VALUE">
-						<xsl:variable name="maxvol" select="translate(maxvol, ' ', '')"/>
-						<xsl:variable name="maxvol1" select="number($maxvol)"/>
-						<xsl:value-of select="format-number($maxvol1*1000000, '#')"/>
+						<xsl:variable name="totalsettle" select="translate(totalsettle, ' ', '')"/>
+						<xsl:variable name="totalsettle1" select="number($totalsettle)"/>
+						<xsl:value-of select="format-number($totalsettle1*1000000, '#')"/>
 					</Property>
 					<Property Name ="TRADE_REF">
 						<xsl:value-of select="FundsPlaced"/>
