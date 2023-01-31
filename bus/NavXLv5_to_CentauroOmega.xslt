@@ -423,7 +423,7 @@
                             </xsl:value-of>
                         </Property>
                         <Property Name="DEALCOMISION">
-                            <xsl:value-of select="Property[@Name='DEALCOMISION']">
+                            <xsl:value-of select="translate(Property[@Name='DEALCOMISION'], '-', '')">
                             </xsl:value-of>
                         </Property>
                         <Property Name="FIXING_SOURCE">
