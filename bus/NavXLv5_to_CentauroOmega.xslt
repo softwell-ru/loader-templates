@@ -2,6 +2,41 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="xml" encoding="windows-1251"/>
     <xsl:template match="/Pocket/Body_Pocket/Object" priority="10">
+		 <xsl:if test="@Name='vw_FIXING'">
+            <Object Name="vw_FIXING">
+                <xsl:for-each select="@*[name(.) != 'Name']">
+                    <xsl:attribute name="{name(.)}"><xsl:value-of select="."/></xsl:attribute>
+                </xsl:for-each>
+                <Property Name="FIXING_PRICE_ID">
+                    <xsl:value-of select="Property[@Name='FIXING_PRICE_ID']">
+                    </xsl:value-of>
+                </Property>
+                <Property Name="FIXING_NAME">
+                    <xsl:value-of select="Property[@Name='FIXING_TITLE']">
+                    </xsl:value-of>
+                </Property>
+				 <Property Name="FIXING_NAME_ODB">
+                    <xsl:value-of select="Property[@Name='FIXING_SOURCE_ODB']">
+                    </xsl:value-of>
+                </Property>
+                <Property Name="FIXING_DATE">
+                    <xsl:value-of select="Property[@Name='FIXING_DATE']">
+                    </xsl:value-of>
+                </Property>
+                <Property Name="LEAD_FIXING_CCY">
+                    <xsl:value-of select="Property[@Name='FIXING_CCY_1']">
+                    </xsl:value-of>
+                </Property>
+                <Property Name="QUOTE_FIXING_CCY">
+                    <xsl:value-of select="Property[@Name='FIXING_CCY_2']">
+                    </xsl:value-of>
+                </Property>
+                <Property Name="FIXING_PRICE">
+                    <xsl:value-of select="Property[@Name='FIXING_PRICE']">
+                    </xsl:value-of>
+                </Property>
+            </Object>				
+        </xsl:if>
         <xsl:if test="@Name='NETTING'">
             <Object Name="NETTING">
                 <xsl:for-each select="@*[name(.) !='Name']">
