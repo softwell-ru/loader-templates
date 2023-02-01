@@ -35,6 +35,10 @@
                     <xsl:value-of select="Property[@Name='FIXING_PRICE']">
                     </xsl:value-of>
                 </Property>
+				<Property Name="EVENTID">
+                    <xsl:value-of select="Property[@Name='EVENTID']">
+                    </xsl:value-of>
+                </Property>
             </Object>				
         </xsl:if>
         <xsl:if test="@Name='NETTING'">
