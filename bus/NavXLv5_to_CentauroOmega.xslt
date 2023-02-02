@@ -12,10 +12,6 @@
                     </xsl:value-of>
                 </Property>
                 <Property Name="FIXING_NAME">
-                    <xsl:value-of select="Property[@Name='FIXING_TITLE']">
-                    </xsl:value-of>
-                </Property>
-				 <Property Name="FIXING_NAME_ODB">
                     <xsl:value-of select="Property[@Name='FIXING_SOURCE_ODB']">
                     </xsl:value-of>
                 </Property>
