@@ -3,7 +3,7 @@
 	<xsl:output method="xml" encoding="windows-1251"/>
     <xsl:strip-space elements="*"/>
     <xsl:template match="data[@id='marketdata_yields']"/>
-    <xsl:template match="data[@id='secstats' or @id='marketdata']">
+    <xsl:template match="data[@id='secstats' or @id='marketdata' or @id='history']">
 		<Pocket>
             <Body_Pocket>
             <xsl:for-each select="//row">
@@ -68,7 +68,14 @@
                         <xsl:value-of select="@LAST"/>
                     </Property>
                     <Property Name ="CLOSE_PRICE">
-                        <xsl:value-of select="@CLOSEPRICE"/>
+                        <xsl:choose>
+                            <xsl:when test="@LCLOSEPRICE">
+                                <xsl:value-of select="@LCLOSEPRICE"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="@CLOSE"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </Property>
                     <Property Name ="MARKETPRICE">
                         <xsl:value-of select="@MARKETPRICE2"/>
