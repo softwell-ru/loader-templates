@@ -26,11 +26,18 @@
                     <Property Name ="INSTRUMENT_NAME">
                         <xsl:value-of select="@SECID"/>
                     </Property>
-                    <Property Name ="C$DATE">
-                        <xsl:variable name="vToday">
-                            <xsl:value-of select="current-dateTime()"/>
-                        </xsl:variable>
-                        <xsl:value-of select="substring($vToday, 1, 10)"/>
+					<Property Name ="C$DATE">
+                        <xsl:choose>
+                            <xsl:when test="@TRADEDATE">
+                                <xsl:value-of select="@TRADEDATE"/>
+                            </xsl:when>
+							<xsl:otherwise>
+                                <xsl:variable name="vToday">
+								<xsl:value-of select="current-dateTime()"/>
+								</xsl:variable>
+								<xsl:value-of select="substring($vToday, 1, 10)"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </Property>
                     <Property Name ="C$PROOF">
                         <xsl:value-of select="1"/>
