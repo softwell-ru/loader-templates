@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="xml" encoding="windows-1251"/>
     <xsl:template match="/Pocket/Body_Pocket/Object" priority="10">
-		 <xsl:if test="@Name='vw_FIXING'">
+         <xsl:if test="@Name='vw_FIXING'">
             <Object Name="vw_FIXING">
                 <xsl:for-each select="@*[name(.) != 'Name']">
                     <xsl:attribute name="{name(.)}"><xsl:value-of select="."/></xsl:attribute>
@@ -31,11 +31,11 @@
                     <xsl:value-of select="Property[@Name='FIXING_PRICE']">
                     </xsl:value-of>
                 </Property>
-				<Property Name="EVENTID">
+                <Property Name="EVENTID">
                     <xsl:value-of select="Property[@Name='EVENTID']">
                     </xsl:value-of>
                 </Property>
-            </Object>				
+            </Object>                
         </xsl:if>
         <xsl:if test="@Name='NETTING'">
             <Object Name="NETTING">
@@ -1257,6 +1257,18 @@
                                     <xsl:value-of select="Property[@Name='PRICEREPAYMENT']">
                                     </xsl:value-of>
                                 </Property>
+                                <Property Name="DEALCOMISION">
+                                    <xsl:value-of select="translate(Property[@Name='DEALCOMISION'], '-', '')">
+                                    </xsl:value-of>
+                                </Property>
+                                <Property Name="CLIRINGCOMISION">
+                                    <xsl:value-of select="translate(Property[@Name='CLIRINGCOMISION'], '-', '')">
+                                    </xsl:value-of>
+                                </Property>
+                                <Property Name="REFERENCE_CODE">
+                                    <xsl:value-of select="Property[@Name='REFERENCE_CODE']">
+                                    </xsl:value-of>
+                                </Property>
                             </xsl:otherwise>
                         </xsl:choose>
                     </Object>
@@ -1445,6 +1457,18 @@
                                 </Property>
                                 <Property Name="DEALER_ID_ODB">
                                     <xsl:value-of select="Property[@Name='DEALER_ID_ODB']">
+                                    </xsl:value-of>
+                                </Property>
+                                <Property Name="DEALCOMISION">
+                                    <xsl:value-of select="translate(Property[@Name='DEALCOMISION'], '-', '')">
+                                    </xsl:value-of>
+                                </Property>
+                                <Property Name="CLIRINGCOMISION">
+                                    <xsl:value-of select="translate(Property[@Name='CLIRINGCOMISION'], '-', '')">
+                                    </xsl:value-of>
+                                </Property>
+                                <Property Name="REFERENCE_CODE">
+                                    <xsl:value-of select="Property[@Name='REFERENCE_CODE']">
                                     </xsl:value-of>
                                 </Property>
                             </xsl:otherwise>
