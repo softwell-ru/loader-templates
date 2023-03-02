@@ -31,6 +31,12 @@
                             <xsl:when test="@TRADEDATE">
                                 <xsl:value-of select="@TRADEDATE"/>
                             </xsl:when>
+							<xsl:when test="@SYSTIME">
+                                <xsl:value-of select="@SYSTIME"/>
+                            </xsl:when>
+							<xsl:when test="@PREVDATE">
+                                <xsl:value-of select="@PREVDATE"/>
+                            </xsl:when>
 							<xsl:otherwise>
                                 <xsl:variable name="vToday">
 								<xsl:value-of select="current-dateTime()"/>
