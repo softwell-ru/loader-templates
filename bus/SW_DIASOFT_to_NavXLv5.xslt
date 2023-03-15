@@ -389,10 +389,20 @@
                     </xsl:otherwise>
                 </xsl:choose>
 
-                <Property Name ="NOMINAL">
-                    <xsl:value-of select="Property[@Name='NOMINAL']">
-                    </xsl:value-of>
-                </Property>
+				<xsl:choose>
+                    <xsl:when test="(Property[@Name='TYPE'] = 4)">
+                        <Property Name ="NOMINAL">
+                            <xsl:value-of select="''">
+                            </xsl:value-of>
+                        </Property>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <Property Name ="NOMINAL">
+                            <xsl:value-of select="Property[@Name='NOMINAL']">
+                            </xsl:value-of>
+                        </Property>
+                    </xsl:otherwise>
+                </xsl:choose>
  
                 <xsl:choose>
                     <xsl:when test="(Property[@Name='NOMINALCURRENCY'] = 'RUR')">
@@ -462,13 +472,13 @@
                 <xsl:choose>
                     <xsl:when test="(Property[@Name='TYPE'] = 4)">
                         <Property Name ="COUNT_BASE_INSTRUMENT">
-                            <xsl:value-of select="'NOMINAL'">
+                            <xsl:value-of select="Property[@Name='NOMINAL']">
                             </xsl:value-of>
                         </Property>
                     </xsl:when>
                     <xsl:otherwise>
                         <Property Name ="COUNT_BASE_INSTRUMENT">
-                            <xsl:value-of select="'COUNT_BASE_INSTRUMENT'">
+                            <xsl:value-of select="Property[@Name='COUNT_BASE_INSTRUMENT']">
                             </xsl:value-of>
                         </Property>
                     </xsl:otherwise>
