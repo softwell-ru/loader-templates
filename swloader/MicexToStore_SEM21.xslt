@@ -47,20 +47,31 @@
 						</Property>
 						<Property Name="CURRENCYID">
 							<xsl:choose>
-								<xsl:when test="@CurrencyId = &quot;RUR&quot;">
-									<xsl:value-of select="&quot;RUB&quot;"/>
-								</xsl:when>
-								<xsl:when test="@CurrencyId = &quot;SUR&quot;">
-									<xsl:value-of select="&quot;RUB&quot;"/>
-								</xsl:when>
-								<xsl:when test="(@SecurityType = &quot;&#x043e;&#x0431;&quot;) and (@FaceUnit = &quot;RUR&quot;)">
-									<xsl:value-of select="&quot;RUB&quot;"/>
-								</xsl:when>
-								<xsl:when test="(@SecurityType = &quot;&#x043e;&#x0431;&quot;) and (@FaceUnit = &quot;SUR&quot;)">
-									<xsl:value-of select="&quot;RUB&quot;"/>
+								<xsl:when test="@SecurityType = &quot;&#x043e;&#x0431;&quot;">
+									<xsl:choose>
+										<xsl:when test="@FaceUnit = &quot;RUR&quot;">
+											<xsl:value-of select="&quot;RUB&quot;"/>
+										</xsl:when>
+										<xsl:when test="@FaceUnit = &quot;SUR&quot;">
+											<xsl:value-of select="&quot;RUB&quot;"/>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:value-of select="@FaceUnit"/>
+										</xsl:otherwise>	
+									</xsl:choose>
 								</xsl:when>
 								<xsl:otherwise>
-									<xsl:value-of select="@CurrencyId"/>
+									<xsl:choose>
+										<xsl:when test="@CurrencyId = &quot;RUR&quot;">
+											<xsl:value-of select="&quot;RUB&quot;"/>
+										</xsl:when>
+										<xsl:when test="@CurrencyId = &quot;SUR&quot;">
+											<xsl:value-of select="&quot;RUB&quot;"/>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:value-of select="@CurrencyId"/>
+										</xsl:otherwise>	
+									</xsl:choose>
 								</xsl:otherwise>
 							</xsl:choose>
 						</Property>
