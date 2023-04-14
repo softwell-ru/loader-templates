@@ -69,11 +69,11 @@
 						<xsl:value-of select="format-number(number(substring(firstdate, 1, 2)), '00')"/>
 					</Property>
 					<Property Name ="PAYMENT_DATE">
-						<xsl:value-of select="format-number(number(substring(firstdate, 7, 4)), '0000')"/>
+						<xsl:value-of select="format-number(number(substring(seconddate, 7, 4)), '0000')"/>
 						<xsl:text>-</xsl:text>
-						<xsl:value-of select="format-number(number(substring(firstdate, 4, 2)), '00')"/>
+						<xsl:value-of select="format-number(number(substring(seconddate, 4, 2)), '00')"/>
 						<xsl:text>-</xsl:text>
-						<xsl:value-of select="format-number(number(substring(firstdate, 1, 2)), '00')"/>
+						<xsl:value-of select="format-number(number(substring(seconddate, 1, 2)), '00')"/>
 					</Property>
 					<Property Name ="INSTRUMENT_ID">
 						<xsl:value-of select="'DPKAZNA'"/>
