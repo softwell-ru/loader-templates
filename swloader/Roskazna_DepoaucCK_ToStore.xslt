@@ -11,7 +11,7 @@
 						<xsl:value-of select="'MICEX'"/>
 					</Property>
 					<Property Name="MARKET_NAME">
-						<xsl:value-of select="'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ'"/>
+						<xsl:value-of select="'Московская Биржа'"/>
 					</Property>
 					<Property Name="TRADING_PLACE_SHORT">
 						<xsl:value-of select="'DP-AU-ORG-CK'"/>
@@ -20,11 +20,16 @@
 						<xsl:value-of select="'DP-AU-ORG-CK'"/>
 					</Property>
 					<Property Name ="TRADE_NUMBER">
+						<xsl:value-of select="'DAOCK'"/>
+						<xsl:text>-</xsl:text>
 						<xsl:value-of select="id"/>
 					</Property>
 					<Property Name ="TRADE_SIDE">
 						<xsl:value-of select="'SELL'"/>
 					</Property>
+					<Property Name ="TRADE_FIRMID ">
+                        <xsl:value-of select="'MINFIN'"/>
+                    </Property>
 					<Property Name ="TRADE_ACCOUNT">
 						<xsl:value-of select="'ROSKAZNA.GOV.CK'"/>
 					</Property>

@@ -11,7 +11,7 @@
 						<xsl:value-of select="'MICEX'"/>
 					</Property>
 					<Property Name="MARKET_NAME">
-						<xsl:value-of select="'ÐœÐ¾ÑÐºÐ¾Ð²ÑÐºÐ°Ñ Ð‘Ð¸Ñ€Ð¶Ð°'"/>
+						<xsl:value-of select="'Ìîñêîâñêàÿ Áèðæà'"/>
 					</Property>
 					<Property Name="TRADING_PLACE_SHORT">
 						<xsl:value-of select="'DP-AU-ORG'"/>
@@ -20,11 +20,16 @@
 						<xsl:value-of select="'DP-AU-ORG'"/>
 					</Property>
 					<Property Name ="TRADE_NUMBER">
+					<xsl:value-of select="'DAO'"/>
+						<xsl:text>-</xsl:text>
 						<xsl:value-of select="id"/>
 					</Property>
 					<Property Name ="TRADE_SIDE">
-						<xsl:value-of select="'SELL'"/>
+						<xsl:value-of select="'RREPO'"/>
 					</Property>
+					<Property Name ="TRADE_FIRMID ">
+                        <xsl:value-of select="'MINFIN'"/>
+                    </Property>
 					<Property Name ="TRADE_ACCOUNT">
 						<xsl:value-of select="'ROSKAZNA.GOV'"/>
 					</Property>
@@ -69,11 +74,11 @@
 						<xsl:value-of select="format-number(number(substring(firstdate, 1, 2)), '00')"/>
 					</Property>
 					<Property Name ="PAYMENT_DATE">
-						<xsl:value-of select="format-number(number(substring(seconddate, 7, 4)), '0000')"/>
+						<xsl:value-of select="format-number(number(substring(firstdate, 7, 4)), '0000')"/>
 						<xsl:text>-</xsl:text>
-						<xsl:value-of select="format-number(number(substring(seconddate, 4, 2)), '00')"/>
+						<xsl:value-of select="format-number(number(substring(firstdate, 4, 2)), '00')"/>
 						<xsl:text>-</xsl:text>
-						<xsl:value-of select="format-number(number(substring(seconddate, 1, 2)), '00')"/>
+						<xsl:value-of select="format-number(number(substring(firstdate, 1, 2)), '00')"/>
 					</Property>
 					<Property Name ="INSTRUMENT_ID">
 						<xsl:value-of select="'DPKAZNA'"/>

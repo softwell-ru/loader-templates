@@ -24,6 +24,8 @@
 						<xsl:value-of select="'0'"/>
 					</Property>
 					<Property Name="PARENTTRADENO">
+						<xsl:value-of select="'REPO-RAN-CK'"/>
+						<xsl:text>-</xsl:text>
 						<xsl:value-of select="id"/>
 					</Property>					
 					<Property Name ="INSTRUMENT_SHORT">
@@ -57,6 +59,8 @@
                         <xsl:value-of select="'MINFIN'"/>
                     </Property>					
 					<Property Name ="TRADE_NUMBER">
+						<xsl:value-of select="'REPO-RAN-CK'"/>
+						<xsl:text>-</xsl:text>
 						<xsl:value-of select="id"/>
 					</Property>
 					<Property Name ="TRADE_SIDE">
