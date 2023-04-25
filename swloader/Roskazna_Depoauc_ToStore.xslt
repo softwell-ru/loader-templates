@@ -25,7 +25,7 @@
 						<xsl:value-of select="id"/>
 					</Property>
 					<Property Name ="TRADE_SIDE">
-						<xsl:value-of select="'RREPO'"/>
+						<xsl:value-of select="'SELL'"/>
 					</Property>
 					<Property Name ="TRADE_FIRMID ">
                         <xsl:value-of select="'MINFIN'"/>
@@ -53,7 +53,7 @@
 					<Property Name ="PRICE2">
 						<xsl:value-of select="'100'"/>
 					</Property>
-					<Property Name ="REPORATE">
+					<Property Name ="TRADE_PRICE">
 						<xsl:value-of select="waacceptrate"/>
 					</Property>
 					<Property Name ="TRADE_DATE">
