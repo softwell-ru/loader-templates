@@ -130,12 +130,11 @@
                             </xsl:value-of>
                         </Property> 
                         <Property Name ="VALUEBUY"> 
-                            <xsl:value-of select="Property[@Name='VALUEBUY']">
+                            <xsl:value-of select="substring(Property[@Name='VALUEBUY'],1,10)">   
                             </xsl:value-of>
                         </Property> 
                         <Property Name ="VALUESELL"> 
-                            <xsl:value-of select="Property[@Name='VALUESELL']">
-                            </xsl:value-of>
+                            <xsl:value-of select="substring(Property[@Name='VALUESELL'],1,10)">					                        </xsl:value-of>
                         </Property> 
                         <Property Name ="VALUEBUYSWAP"> 
                             <xsl:value-of select="Property[@Name='ValueDateBBack']">
