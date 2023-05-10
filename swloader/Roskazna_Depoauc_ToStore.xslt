@@ -11,7 +11,7 @@
 						<xsl:value-of select="'MICEX'"/>
 					</Property>
 					<Property Name="MARKET_NAME">
-						<xsl:value-of select="'Московская Биржа'"/>
+						<xsl:value-of select="'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ'"/>
 					</Property>
 					<Property Name="TRADING_PLACE_SHORT">
 						<xsl:value-of select="'DP-AU-ORG'"/>
@@ -54,7 +54,19 @@
 						<xsl:value-of select="'100'"/>
 					</Property>
 					<Property Name ="TRADE_PRICE">
-						<xsl:value-of select="waacceptrate"/>
+						<xsl:variable name="rate" select="ratetype" />
+						<xsl:if test="$rate='FIXED'">
+							<xsl:value-of select="translate(waacceptrate, ',', '.')"/>
+						</xsl:if>
+					</Property>
+					<Property Name ="FLOAT_SPREAD">
+						<xsl:variable name="rate" select="ratetype" />
+						<xsl:if test="$rate='FLOATING'">
+							<xsl:value-of select="translate(waacceptrate, ',', '.')"/>
+						</xsl:if>
+					</Property>
+					<Property Name ="FLOAT_RATE">
+						<xsl:value-of select="baseflrate"/>
 					</Property>
 					<Property Name ="TRADE_DATE">
 						<xsl:value-of select="format-number(number(substring(aucdate, 7, 4)), '0000')"/>
