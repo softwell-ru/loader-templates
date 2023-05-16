@@ -12,7 +12,7 @@
 						<xsl:value-of select="'MICEX'"/>
 					</Property>
 					<Property Name="MARKET_NAME">
-						<xsl:value-of select="'���������� �����'"/>
+						<xsl:value-of select="'MICEX'"/>
 					</Property>
 					<Property Name="TRADING_PLACE_SHORT">
 						<xsl:value-of select="'REPO-AU-NORG'"/>
@@ -100,8 +100,14 @@
 							<xsl:value-of select="translate(waacceptrate, ',', '.')"/>
 						</xsl:if>
 					</Property>
-					<Property Name ="FLOAT_RATE">
-						<xsl:value-of select="baseflrate"/>
+					<Property Name ="FLOAT_RATE_SHORT">
+						<xsl:choose>
+							<xsl:when test="baseflrate=&quot;-&quot;">
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="baseflrate"/>
+							</xsl:otherwise>
+						</xsl:choose>
 					</Property>
 					<Property Name ="TRADE_DATE">
 						<xsl:value-of select="format-number(number(substring(aucdate, 7, 4)), '0000')"/>
