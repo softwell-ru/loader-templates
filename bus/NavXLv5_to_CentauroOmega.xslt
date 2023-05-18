@@ -1042,6 +1042,10 @@
                             <xsl:value-of select="Property[@Name='AMOUNT2PART']"> 
                             </xsl:value-of>
                         </Property>
+                        <Property Name="INSTRUMENT_ISIN">
+                            <xsl:value-of select="Property[@Name='INSTRUMENT_ISIN']"> 
+                            </xsl:value-of>
+                        </Property>
                         <Property Name="AMOUNT2">
                             <xsl:choose>
                                 <xsl:when test="(Property[@Name='TRNID']='SCFDM')">
