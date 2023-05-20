@@ -320,7 +320,7 @@
                             </xsl:value-of>
                         </Property>
                         <Property Name="BROKER">
-                            <xsl:value-of select="Property[@Name='BROKER']">
+                            <xsl:value-of select="Property[@Name='BROKER_ODB']">
                             </xsl:value-of>
                         </Property>
                         <Property Name="TRADER_STR">
@@ -615,7 +615,7 @@
                             </xsl:value-of>
                         </Property>
                         <Property Name="BROKER">
-                            <xsl:value-of select="Property[@Name='BROKER']">
+                            <xsl:value-of select="Property[@Name='BROKER_ODB']">
                             </xsl:value-of>
                         </Property>
                         <Property Name="TRADER_STR">
