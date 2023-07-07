@@ -96,6 +96,10 @@
                             <xsl:value-of select="Property[@Name='TICKET_ARRAY']">
                             </xsl:value-of>
                         </Property>
+						<Property Name="CURR_REL_NETT_TICKET_ARRAY">
+                            <xsl:value-of select="Property[@Name='CURR_REL_NETT_TICKET_ARRAY']">
+                            </xsl:value-of>
+                        </Property>
                         <Property Name="NETT_CURRENCY">
                             <xsl:value-of select="Property[@Name='NETT_CURRENCY']">
                             </xsl:value-of>
