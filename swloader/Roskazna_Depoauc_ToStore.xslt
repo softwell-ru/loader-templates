@@ -11,7 +11,7 @@
 						<xsl:value-of select="'MICEX'"/>
 					</Property>
 					<Property Name="MARKET_NAME">
-						<xsl:value-of select="'MICEX'"/>
+						<xsl:value-of select="'Московская Биржа'"/>
 					</Property>
 					<Property Name="TRADING_PLACE_SHORT">
 						<xsl:value-of select="'DP-AU-ORG'"/>
@@ -33,14 +33,13 @@
 					<Property Name ="TRADE_ACCOUNT">
 						<xsl:value-of select="'ROSKAZNA.GOV'"/>
 					</Property>
-					<Property Name ="TRADE_PRICE">
-						<xsl:value-of select="totalaccept"/>
-					</Property>
 					<Property Name ="TRADE_QUANTITY">
 						<xsl:value-of select="'1'"/>
 					</Property>
 					<Property Name ="TRADE_VALUE">
-						<xsl:value-of select="totalaccept"/>
+						<xsl:variable name="totalaccept" select="translate(totalaccept, ' ', '')"/>
+						<xsl:variable name="totalaccept" select="number($totalaccept)"/>
+						<xsl:value-of select="format-number($totalaccept*1000000, '#')"/>
 					</Property>
 					<Property Name ="TRADE_REF">
 						<xsl:value-of select="FundsPlaced"/>
@@ -54,25 +53,7 @@
 						<xsl:value-of select="'100'"/>
 					</Property>
 					<Property Name ="TRADE_PRICE">
-						<xsl:variable name="rate" select="ratetype" />
-						<xsl:if test="$rate='FIXED'">
-							<xsl:value-of select="translate(waacceptrate, ',', '.')"/>
-						</xsl:if>
-					</Property>
-					<Property Name ="FLOAT_SPREAD">
-						<xsl:variable name="rate" select="ratetype" />
-						<xsl:if test="$rate='FLOATING'">
-							<xsl:value-of select="translate(waacceptrate, ',', '.')"/>
-						</xsl:if>
-					</Property>
-					<Property Name ="FLOAT_RATE_SHORT">
-						<xsl:choose>
-							<xsl:when test="baseflrate=&quot;-&quot;">
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:value-of select="baseflrate"/>
-							</xsl:otherwise>
-						</xsl:choose>
+						<xsl:value-of select="waacceptrate"/>
 					</Property>
 					<Property Name ="TRADE_DATE">
 						<xsl:value-of select="format-number(number(substring(aucdate, 7, 4)), '0000')"/>
