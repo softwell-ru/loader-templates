@@ -38,8 +38,8 @@
 					</Property>
 					<Property Name ="TRADE_VALUE">
 						<xsl:variable name="totalaccept" select="translate(totalaccept, ' ', '')"/>
-						<xsl:variable name="totalaccept" select="number($totalaccept)"/>
-						<xsl:value-of select="format-number($totalaccept*1000000, '#')"/>
+						<xsl:variable name="totalaccept1" select="number($totalaccept)"/>
+						<xsl:value-of select="format-number($totalaccept1*1000000, '#')"/>
 					</Property>
 					<Property Name ="TRADE_REF">
 						<xsl:value-of select="FundsPlaced"/>
