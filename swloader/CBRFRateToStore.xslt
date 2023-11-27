@@ -30,12 +30,6 @@
 						</xsl:variable>
 						<xsl:value-of select="substring($vToday, 1, 10)"/>
 					</Property>
-					<Property Name ="BID">
-						<xsl:value-of select="stavka_ref"/>
-					</Property>
-					<Property Name ="ASK">
-						<xsl:value-of select="stavka_ref"/>
-					</Property>
 					<Property Name ="MARKETPRICE">
 						<xsl:value-of select="stavka_ref"/>
 					</Property>
