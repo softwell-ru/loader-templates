@@ -10,10 +10,10 @@
 						<xsl:value-of select="'NFA'"/>
 					</Property>
 					<Property Name ="MARKET_NAME">
-						<xsl:value-of select="'MAIN'"/>
+						<xsl:value-of select="'NFA_MIRP'"/>
 					</Property>
 					<Property Name ="TRADING_PLACE_SHORT">
-						<xsl:value-of select="'MAIN'"/>
+						<xsl:value-of select="'NFA_MIRP'"/>
 					</Property>
 					<Property Name ="TRADING_PLACE_NAME">
 						<xsl:value-of select="'NFA'"/>
