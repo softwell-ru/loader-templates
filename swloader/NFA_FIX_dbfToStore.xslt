@@ -10,10 +10,10 @@
 					</xsl:attribute>
 				</xsl:for-each>
 				<Property Name ="TRADING_PLACE_SHORT">
-					<xsl:value-of select="'MAIN'"/>
+					<xsl:value-of select="'NFA_MIRP'"/>
 				</Property>
 				<Property Name ="MARKET_NAME">
-					<xsl:value-of select="'MAIN'"/>
+					<xsl:value-of select="'NFA_MIRP'"/>
 				</Property>
 				<Property Name ="MARKET_SHORT">
 					<xsl:value-of select="'NFA'"/>
@@ -22,7 +22,11 @@
 					<xsl:value-of select="'NFA'"/>
 				</Property>
 				<Property Name="C$DATE">
-					<xsl:value-of select="Property[@Name='FIX_DATE']"/>
+					<xsl:value-of select="format-number(number(substring(Property[@Name='FIX_DATE'], 1, 4)), '0000')"/>
+					<xsl:text>-</xsl:text>
+					<xsl:value-of select="format-number(number(substring(Property[@Name='FIX_DATE'], 6, 2)), '00')"/>
+					<xsl:text>-</xsl:text>
+					<xsl:value-of select="format-number(number(substring(Property[@Name='FIX_DATE'], 9, 2)), '00')"/>
 				</Property>
 				<Property Name ="C$PROOF">
 					<xsl:value-of select="1"/>
