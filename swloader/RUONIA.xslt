@@ -7,10 +7,10 @@
 			<xsl:for-each select="/archive/values/value[@name='Значение, %']">
 				<Object Name="QUOTATION">
 					<Property Name ="TRADING_PLACE_SHORT">
-						<xsl:value-of select="'MAIN'"/>
+						<xsl:value-of select="'NFA_MIRP'"/>
 					</Property>
 					<Property Name ="MARKET_NAME">
-						<xsl:value-of select="'MAIN'"/>
+						<xsl:value-of select="'NFA_MIRP'"/>
 					</Property>
 					<Property Name ="MARKET_SHORT">
 						<xsl:value-of select="'NFA'"/>
