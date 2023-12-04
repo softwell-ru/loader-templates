@@ -10,10 +10,10 @@
 						<xsl:value-of select="'NFA'"/>
 					</Property>
 					<Property Name ="MARKET_NAME">
-						<xsl:value-of select="'MAIN'"/>
+						<xsl:value-of select="'NFA_MIRP'"/>
 					</Property>
 					<Property Name ="TRADING_PLACE_SHORT">
-						<xsl:value-of select="'MAIN'"/>
+						<xsl:value-of select="'NFA_MIRP'"/>
 					</Property>
 					<Property Name ="TRADING_PLACE_NAME">
 						<xsl:value-of select="'NFA'"/>
@@ -30,7 +30,16 @@
 					<Property Name ="INSTRUMENT_NAME">
 						<xsl:value-of select="td[3]"/>
 					</Property>
-					<Property Name ="LAST_PRICE">
+					<Property Name ="BID">
+                        <xsl:value-of select="td[6]"/>
+					</Property>
+					<Property Name ="ASK">
+						<xsl:value-of select="td[6]"/>
+					</Property>
+					<Property Name ="OFFER">
+						<xsl:value-of select="td[6]"/>
+					</Property>
+					<Property Name ="MARKETPRICE">
 						<xsl:value-of select="td[6]"/>
 					</Property>
 					<Property Name ="C$DATE">
