@@ -26,21 +26,11 @@
 					</Property>
 					<Property Name ="INSTRUMENT_SHORT">
 						<xsl:value-of select="td[3]"/>
-                        <xsl:text>-</xsl:text>
-                        <xsl:value-of select="td[4]"/>
 					</Property>
 					<Property Name ="INSTRUMENT_NAME">
 						<xsl:value-of select="td[3]"/>
-                        <xsl:text>-</xsl:text>
-                        <xsl:value-of select="td[4]"/>
 					</Property>
-					<Property Name ="BID">
-                        <xsl:value-of select="td[5]"/>
-					</Property>
-					<Property Name ="ASK">
-						<xsl:value-of select="td[6]"/>
-					</Property>
-					<Property Name ="OFFER">
+					<Property Name ="LAST_PRICE">
 						<xsl:value-of select="td[6]"/>
 					</Property>
 					<Property Name ="C$DATE">
@@ -49,6 +39,28 @@
 						<xsl:value-of select="format-number(number(substring(td[1], 4, 2)), '00')"/>
 						<xsl:text>-</xsl:text>
 						<xsl:value-of select="format-number(number(substring(td[1], 1, 2)), '00')"/>
+					</Property>
+					<Property Name ="MATDATE">
+						<xsl:choose>
+							<xsl:when test="string(td[5]) = ''">
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="format-number(number(substring(td[5], 7, 4)), '0000')"/>
+								<xsl:text>-</xsl:text>
+								<xsl:value-of select="format-number(number(substring(td[5], 4, 2)), '00')"/>
+								<xsl:text>-</xsl:text>
+								<xsl:value-of select="format-number(number(substring(td[5], 1, 2)), '00')"/>
+							</xsl:otherwise>
+						</xsl:choose>
+					</Property>
+					<Property Name ="REGNUMBER">
+						<xsl:choose>
+							<xsl:when test="string(td[4]) = ''">
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="td[4]"/>
+							</xsl:otherwise>
+						</xsl:choose>
 					</Property>
 				</Object>
 			</xsl:for-each>
