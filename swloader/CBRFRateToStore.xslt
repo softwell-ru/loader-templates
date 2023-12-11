@@ -30,7 +30,7 @@
 						</xsl:variable>
 						<xsl:value-of select="substring($vToday, 1, 10)"/>
 					</Property>
-					<Property Name ="MARKETPRICE">
+					<Property Name ="LAST_PRICE">
 						<xsl:value-of select="stavka_ref"/>
 					</Property>
 					<Property Name ="CURRENCYID">
