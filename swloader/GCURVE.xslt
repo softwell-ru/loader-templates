@@ -37,7 +37,7 @@
 							<xsl:when test="@period='0.25'">
 								<xsl:value-of select="'3M'"/>
 							</xsl:when>
-							<xsl:when test="@period = '0.5'">
+							<xsl:when test="@period = '0.50'">
 								<xsl:value-of select="'6M'"/>
 							</xsl:when>
 							<xsl:when test="@period = '0.75'">
@@ -78,7 +78,7 @@
 							<xsl:when test="@period='0.25'">
 								<xsl:value-of select="'3M'"/>
 							</xsl:when>
-							<xsl:when test="@period = '0.5'">
+							<xsl:when test="@period = '0.50'">
 								<xsl:value-of select="'6M'"/>
 							</xsl:when>
 							<xsl:when test="@period = '0.75'">
