@@ -20,7 +20,7 @@
 					<Property Name="C$PROOF">
 						<xsl:value-of select="1"/>
 					</Property>
-					<Property Name="MARKET_PRICE">
+					<Property Name="MARKETPRICE">
 						<xsl:value-of select="Property[@Name='&#x422;&#x435;&#x43E;&#x440;&#x435;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x430;&#x44F;&#x20;&#x446;&#x435;&#x43D;&#x430;&#x20;&#x43E;&#x43F;&#x446;&#x438;&#x43E;&#x43D;&#x430;']"/>
 					</Property>
 					<Property Name="INSTRUMENT_NAME">
