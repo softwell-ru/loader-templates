@@ -28,7 +28,10 @@
 					<Property Name ="C$PROOF">
 						<xsl:value-of select="'1'"/>
 					</Property>
-					<Property Name ="MARKETPRICE">
+					<Property Name ="BID">
+						<xsl:value-of select="@value"/>
+					</Property>
+					<Property Name ="ASK">
 						<xsl:value-of select="@value"/>
 					</Property>
 					<Property Name ="INSTRUMENT_SHORT">
