@@ -14,10 +14,10 @@
 						<xsl:value-of select="'MICEX'"/>
 					</Property>
 					<Property Name ="TRADING_PLACE_NAME">
-						<xsl:value-of select="'GCURVE'"/>
+						<xsl:value-of select="'RUB GCurve'"/>
 					</Property>
 					<Property Name ="TRADING_PLACE_SHORT">
-						<xsl:value-of select="'GCURVE'"/>
+						<xsl:value-of select="'RUB GCurve'"/>
 					</Property>
 					<Property Name ="C$DATE">
 						<xsl:value-of select="@tradedate"/>
