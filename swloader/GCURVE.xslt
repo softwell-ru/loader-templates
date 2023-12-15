@@ -31,7 +31,7 @@
 					<Property Name ="BID">
 						<xsl:value-of select="@value"/>
 					</Property>
-					<Property Name ="ASK">
+					<Property Name ="OFFER">
 						<xsl:value-of select="@value"/>
 					</Property>
 					<Property Name ="INSTRUMENT_SHORT">
