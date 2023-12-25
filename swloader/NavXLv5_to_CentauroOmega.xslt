@@ -35,6 +35,10 @@
                     <xsl:value-of select="Property[@Name='FUNDING_RATE']">
                     </xsl:value-of>
                 </Property>
+                <Property Name="ACTION_PRODUCT_CODE">
+                    <xsl:value-of select="Property[@Name='ACTION_PRODUCT_CODE']">
+                    </xsl:value-of>
+                </Property>
             </Object>                
         </xsl:if>
          <xsl:if test="@Name='vw_FIXING'">
