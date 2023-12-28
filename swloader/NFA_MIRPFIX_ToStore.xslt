@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="xml" encoding="windows-1251"/>
-	<xsl:template match="/body">
+	<xsl:template match="/mirp">
 		<Pocket>
 		<Body_Pocket>
-			<xsl:for-each select="/body/tr">
+			<xsl:for-each select="/mirp/item">
 				<Object Name="QUOTATION">
 					<Property Name ="MARKET_SHORT">
 						<xsl:value-of select="'NFA'"/>
@@ -25,42 +25,20 @@
 						<xsl:value-of select="'RUB'"/>
 					</Property>
 					<Property Name ="INSTRUMENT_SHORT">
-						<xsl:value-of select="td[3]"/>
+						<xsl:value-of select="isin"/>
 					</Property>
 					<Property Name ="INSTRUMENT_NAME">
-						<xsl:value-of select="td[3]"/>
+						<xsl:value-of select="name"/>
 					</Property>
 					<Property Name ="LAST_PRICE">
-						<xsl:value-of select="td[6]"/>
+						<xsl:value-of select="mirp"/>
 					</Property>
 					<Property Name ="C$DATE">
-						<xsl:value-of select="format-number(number(substring(td[1], 7, 4)), '0000')"/>
+						<xsl:value-of select="format-number(number(substring(date, 7, 4)), '0000')"/>
 						<xsl:text>-</xsl:text>
-						<xsl:value-of select="format-number(number(substring(td[1], 4, 2)), '00')"/>
+						<xsl:value-of select="format-number(number(substring(date, 4, 2)), '00')"/>
 						<xsl:text>-</xsl:text>
-						<xsl:value-of select="format-number(number(substring(td[1], 1, 2)), '00')"/>
-					</Property>
-					<Property Name ="MATDATE">
-						<xsl:choose>
-							<xsl:when test="string(td[5]) = ''">
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:value-of select="format-number(number(substring(td[5], 7, 4)), '0000')"/>
-								<xsl:text>-</xsl:text>
-								<xsl:value-of select="format-number(number(substring(td[5], 4, 2)), '00')"/>
-								<xsl:text>-</xsl:text>
-								<xsl:value-of select="format-number(number(substring(td[5], 1, 2)), '00')"/>
-							</xsl:otherwise>
-						</xsl:choose>
-					</Property>
-					<Property Name ="REGNUMBER">
-						<xsl:choose>
-							<xsl:when test="string(td[4]) = ''">
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:value-of select="td[4]"/>
-							</xsl:otherwise>
-						</xsl:choose>
+						<xsl:value-of select="format-number(number(substring(date, 1, 2)), '00')"/>
 					</Property>
 				</Object>
 			</xsl:for-each>
