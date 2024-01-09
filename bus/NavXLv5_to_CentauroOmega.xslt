@@ -2,6 +2,45 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="xml" encoding="windows-1251"/>
     <xsl:template match="/Pocket/Body_Pocket/Object" priority="10">
+		     <xsl:if test="@Name='vw_SEC_MARKET'">
+            <Object Name="vw_SEC_MARKET">
+                <xsl:for-each select="@*[name(.) != 'Name']">
+                    <xsl:attribute name="{name(.)}"><xsl:value-of select="."/></xsl:attribute>
+                </xsl:for-each>
+                <Property Name="ID">
+                    <xsl:value-of select="Property[@Name='ID']">
+                    </xsl:value-of>
+                </Property>
+                <Property Name="TRADE_DATE">
+                    <xsl:value-of select="Property[@Name='TRADE_DATE']">
+                    </xsl:value-of>
+                </Property>
+				<Property Name="TRADE_CLASSCODE">
+                    <xsl:value-of select="Property[@Name='TRADE_CLASSCODE']">
+                    </xsl:value-of>
+                </Property>
+                <Property Name="MARKET_PRICE">
+                    <xsl:value-of select="Property[@Name='MARKET_PRICE']">
+                    </xsl:value-of>
+                </Property>
+                <Property Name="INSTRUMENT_CODE_EXCH">
+                    <xsl:value-of select="Property[@Name='INSTRUMENT_CODE_EXCH']">
+                    </xsl:value-of>
+                </Property>
+                <Property Name="EXCHANGE_ODB">
+                    <xsl:value-of select="Property[@Name='EXCHANGE_ODB']">
+                    </xsl:value-of>
+                </Property>
+                <Property Name="FUNDING_RATE">
+                    <xsl:value-of select="Property[@Name='FUNDING_RATE']">
+                    </xsl:value-of>
+                </Property>
+                <Property Name="ACTION_PRODUCT_CODE">
+                    <xsl:value-of select="Property[@Name='ACTION_PRODUCT_CODE']">
+                    </xsl:value-of>
+                </Property>
+            </Object>                
+        </xsl:if>
          <xsl:if test="@Name='vw_FIXING'">
             <Object Name="vw_FIXING">
                 <xsl:for-each select="@*[name(.) != 'Name']">
