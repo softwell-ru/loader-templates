@@ -1106,7 +1106,7 @@
         <xsl:if test="@Name='vw_SEC_DEAL'">
             <xsl:variable name="obj_type" select="Property[@Name='ACTIONTYPE_CODE']"/>
             <xsl:choose>
-                <xsl:when test="(contains($obj_type, 'FTBUY')) or (contains($obj_type, 'FTSELL')) or (contains($obj_type, 'OPTBUY')) or (contains($obj_type, 'OPTSELL'))">
+                <xsl:when test="(contains($obj_type, 'OPTBUY')) or (contains($obj_type, 'OPTSELL'))">
                     <Object Name="OPTION">
                         <xsl:for-each select="@*[name(.) !='Name']">
                             <xsl:attribute name="{name(.)}">
@@ -1314,6 +1314,99 @@
                                 </Property>
                                 <Property Name="REFERENCE_CODE">
                                     <xsl:value-of select="Property[@Name='REFERENCE_CODE']">
+                                    </xsl:value-of>
+                                </Property>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </Object>
+                </xsl:when>
+				<xsl:when test="(contains($obj_type, 'FTBUY')) or (contains($obj_type, 'FTSELL'))">
+                    <Object Name="FUTURES">
+                        <xsl:for-each select="@*[name(.) !='Name']">
+                            <xsl:attribute name="{name(.)}">
+                                <xsl:value-of select="."/>
+                            </xsl:attribute>
+                        </xsl:for-each>
+                        <xsl:choose>
+                            <xsl:when test="(@actnotif='delete')">
+                                <Property Name="TICKET">
+                                    <xsl:value-of select="Property[@Name='TICKET']">
+                                    </xsl:value-of>
+                                </Property>
+                                <Property Name="EVENTID">
+                                    <xsl:value-of select="Property[@Name='EVENTID']">
+                            </xsl:value-of>
+                                </Property>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <Property Name="TICKET">
+                                    <xsl:value-of select="Property[@Name='TICKET']">
+                                    </xsl:value-of>
+                                </Property>
+								<Property Name="EXCH_DEALNUM">
+                                    <xsl:value-of select="Property[@Name='EXCH_DEALNUM']">
+                                    </xsl:value-of>
+                                </Property>
+								<Property Name="DEAL_TIME">
+                                    <xsl:value-of select="Property[@Name='DEAL_TIME']">
+                                    </xsl:value-of>
+                                </Property>
+								<Property Name="DEAL_DATE">
+                                    <xsl:value-of select="Property[@Name='DEAL_DATE']">
+                                    </xsl:value-of>
+                                </Property>
+								<Property Name="ACTIONTYPE_CODE">
+                                    <xsl:variable name="Deal_TP" select="Property[@Name='ACTIONTYPE_CODE']"/>
+                                        <xsl:choose>
+                                            <xsl:when test="(contains($Deal_TP, 'FTBUY'))">
+                                                <xsl:value-of select="'BUY'"/>
+                                                </xsl:when>
+                                            <xsl:when test="(contains($Deal_TP, 'FTSELL'))">
+                                                <xsl:value-of select="'SELL'"/>
+                                            </xsl:when>
+                                        <xsl:otherwise>
+                                            <xsl:value-of select="0"/>
+                                        </xsl:otherwise>
+                                        </xsl:choose>
+                                </Property>
+								<Property Name="DEALER_ID_ODB">
+                                    <xsl:value-of select="Property[@Name='DEALER_ID_ODB']">
+                                    </xsl:value-of>
+                                </Property>
+								<Property Name="COUNTERPARTY_ODB">
+                                    <xsl:value-of select="Property[@Name='COUNTERPARTY_ODB']">
+                                    </xsl:value-of>
+                                </Property>
+								<Property Name="BROKER_ODB">
+                                    <xsl:value-of select="Property[@Name='BROKER_ODB']">
+                                    </xsl:value-of>
+                                </Property>
+								<Property Name="INSTRUMENT_ID">
+                                    <xsl:value-of select="Property[@Name='INSTRUMENT_ID']">
+                                    </xsl:value-of>
+                                </Property>
+								<Property Name="INSTRUMENT_CODE_EXCH">
+                                    <xsl:value-of select="Property[@Name='INSTRUMENT_CODE_EXCH']">
+                                    </xsl:value-of>
+                                </Property>
+								<Property Name="PRICE">
+                                    <xsl:value-of select="Property[@Name='PRICE']">
+                                    </xsl:value-of>
+                                </Property>
+								<Property Name="AMOUNT1">
+                                    <xsl:value-of select="Property[@Name='AMOUNT1']">
+                                    </xsl:value-of>
+                                </Property>
+								<Property Name="LIMIT_STATUS">
+                                    <xsl:value-of select="Property[@Name='LIMIT_STATUS']">
+                                    </xsl:value-of>
+                                </Property>
+								<Property Name="DEALCOMISION">
+                                    <xsl:value-of select="Property[@Name='DEALCOMISION']">
+                                    </xsl:value-of>
+                                </Property>
+								<Property Name="BROKERAGE_AMOUNT">
+                                    <xsl:value-of select="Property[@Name='BROKERAGE_AMOUNT']">
                                     </xsl:value-of>
                                 </Property>
                             </xsl:otherwise>
