@@ -118,8 +118,8 @@
                     <xsl:value-of select="Property[@Name='CURRENCY']">
                     </xsl:value-of>
                 </Property>
-				<Property Name="SETTLEMENT_TYPE ">
-                    <xsl:value-of select="Property[@Name='SETTLEMENT_TYPE ']">
+				<Property Name="SETTLEMENT_TYPE">
+                    <xsl:value-of select="Property[@Name='SETTLEMENT_TYPE']">
                     </xsl:value-of>
                 </Property>
 				<Property Name="MARGIN_CURRENCY">
@@ -138,12 +138,12 @@
                     <xsl:value-of select="Property[@Name='CENT']">
                     </xsl:value-of>
                 </Property>
-				<Property Name="CENT_VALUE ">
-                    <xsl:value-of select="Property[@Name='CENT_VALUE ']">
+				<Property Name="CENT_VALUE">
+                    <xsl:value-of select="Property[@Name='CENT_VALUE']">
                     </xsl:value-of>
                 </Property>
-				<Property Name="PRICE_PRECISION  ">
-                    <xsl:value-of select="Property[@Name='PRICE_PRECISION  ']">
+				<Property Name="PRICE_PRECISION">
+                    <xsl:value-of select="Property[@Name='PRICE_PRECISION']">
                     </xsl:value-of>
                 </Property>
             </Object>                
