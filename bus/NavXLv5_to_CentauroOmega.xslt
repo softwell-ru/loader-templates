@@ -42,7 +42,7 @@
             </Object>                
         </xsl:if>
 		<xsl:if test="@Name='vw_SEC_INSTRUMENT'">
-            <Object Name="vw_SEC_MARKET">
+            <Object Name="vw_SEC_INSTRUMENT">
                 <xsl:for-each select="@*[name(.) != 'Name']">
                     <xsl:attribute name="{name(.)}"><xsl:value-of select="."/></xsl:attribute>
                 </xsl:for-each>
