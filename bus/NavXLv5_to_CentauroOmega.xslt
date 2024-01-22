@@ -54,8 +54,8 @@
                     <xsl:value-of select="Property[@Name='INSTRUMENT_SHORT_NAME']">
                     </xsl:value-of>
                 </Property>
-				<Property Name="INSTRUMENT_CODE">
-                    <xsl:value-of select="Property[@Name='INSTRUMENT_CODE']">
+				<Property Name="INSTRUMENT_CODE_EXCH">
+                    <xsl:value-of select="Property[@Name='INSTRUMENT_CODE_EXCH']">
                     </xsl:value-of>
                 </Property>
                 <Property Name="INSTRUMENT_FULL_NAME">
