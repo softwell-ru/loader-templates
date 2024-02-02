@@ -7,10 +7,10 @@
 		<xsl:variable name="transacttype" select="Property[@Name='&#x422;&#x438;&#x43F;&#x20;&#x442;&#x440;&#x430;&#x43D;&#x437;&#x430;&#x43A;&#x446;&#x438;&#x438;']"/>
 			<Object Name="TRANSACTION">
 				<Property Name="MARKET_SHORT">
-					<xsl:value-of select="'QUIK'"/>
+					<xsl:value-of select="'MICEX'"/>
 				</Property>
 				<Property Name="MARKET_NAME">
-					<xsl:value-of select="'QUIK'"/>
+					<xsl:value-of select="'MICEX'"/>
 				</Property>
 				<Property Name="TRADING_PLACE_SHORT">
 					<xsl:value-of select="'FORTS'"/>
@@ -73,7 +73,7 @@
 					</xsl:choose>
 				</Property>
 				<Property Name="TRANSACT_TYPE">
-					<xsl:value-of select="'VARMRG'"/>
+					<xsl:value-of select="'SCFVM'"/>
 				</Property>
 				<Property Name="TRADE_DATE">
 					<xsl:value-of select="Property[@Name='&#x414;&#x430;&#x442;&#x430;&#x20;&#x440;&#x435;&#x433;&#x438;&#x441;&#x442;&#x440;&#x430;&#x446;&#x438;&#x438;']"/>
