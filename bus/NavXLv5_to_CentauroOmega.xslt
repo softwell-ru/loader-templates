@@ -1145,6 +1145,12 @@
                                             <xsl:when test="($ValueTRNID='PNLTY')">
                                                 <xsl:value-of select="18"/>
                                             </xsl:when>
+											<xsl:when test="(contains($ValueTRNID, 'SCMGC'))">
+												<xsl:value-of select="'SCMGC'"/>
+											</xsl:when>
+											<xsl:when test="(contains($ValueTRNID, 'SCMGA'))">
+												<xsl:value-of select="'SCCMP'"/>
+											</xsl:when>
                                             <xsl:otherwise>
                                                 <xsl:value-of select="0"/>
                                             </xsl:otherwise>
