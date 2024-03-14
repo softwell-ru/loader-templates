@@ -1452,6 +1452,10 @@
                                 </Property>
                             </xsl:when>
                             <xsl:otherwise>
+                                <Property Name="EVENTID">
+                                    <xsl:value-of select="Property[@Name='EVENTID']">
+                                </xsl:value-of>
+                                </Property>
                                 <Property Name="TICKET">
                                     <xsl:value-of select="Property[@Name='TICKET']">
                                     </xsl:value-of>
