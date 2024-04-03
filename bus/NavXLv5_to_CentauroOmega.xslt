@@ -999,6 +999,10 @@
                             <xsl:value-of select="Property[@Name='TRNID']">
                             </xsl:value-of>
                         </Property>
+                        <Property Name="RATE">
+                            <xsl:value-of select="Property[@Name='RATE']">
+                            </xsl:value-of>
+                        </Property>
                         <Property Name="OPERDAYID">
                             <xsl:value-of select="Property[@Name='OPERDAYID']">
                             </xsl:value-of>
