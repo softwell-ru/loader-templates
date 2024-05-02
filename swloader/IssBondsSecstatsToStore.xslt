@@ -99,8 +99,16 @@
                     <Property Name ="PRICEMINUSPREVWAPRICE">
                         <xsl:value-of select="@PRICEMINUSPREVWAPRICE"/>
                     </Property>
-                    <Property Name ="SETTLEPRICE">
-                        <xsl:value-of select="@LCURRENTPRICE"/>
+                    <Property Name="SETTLEPRICE">
+						<xsl:choose>
+						<!-- USE FOR MOEX ISS RATE REPO -->
+							<xsl:when test="@CURRENTVALUE">
+								<xsl:value-of select="@CURRENTVALUE"/>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="@LCURRENTPRICE"/>
+							</xsl:otherwise>
+						</xsl:choose>
                     </Property>
                 </Object>
             </xsl:for-each>
