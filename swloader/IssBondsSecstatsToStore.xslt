@@ -152,7 +152,14 @@
 						<xsl:choose>
 						<!-- USE FOR MOEX ISS FIXING RATE -->
 							<xsl:when test="@rate">
-								<xsl:value-of select="@rate"/>
+								<xsl:choose>
+									<xsl:when test="(contains(@secid, '_ON'))">
+										<xsl:value-of select="@rate * 10000"/>
+									</xsl:when>
+									<xsl:otherwise>
+										<xsl:value-of select="@rate"/>
+									</xsl:otherwise>
+								</xsl:choose>
 							</xsl:when>
 							<xsl:otherwise>
 								<xsl:value-of select="@LAST"/>
