@@ -15,16 +15,48 @@
                         <xsl:value-of select="'MICEX'"/>
                     </Property>
                     <Property Name ="TRADING_PLACE_SHORT">
-                        <xsl:value-of select="@BOARDID"/>
+                        <xsl:choose>
+						<!-- USE FOR MOEX ISS FIXING RATE -->
+							<xsl:when test="@rate">
+								<xsl:value-of select="'FIXS'"/>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="@BOARDID"/>
+							</xsl:otherwise>
+						</xsl:choose>
                     </Property>
                     <Property Name ="TRADING_PLACE_NAME">
-                        <xsl:value-of select="@BOARDID"/>
+                        <xsl:choose>
+						<!-- USE FOR MOEX ISS FIXING RATE -->
+							<xsl:when test="@rate">
+								<xsl:value-of select="'FIXS'"/>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="@BOARDID"/>
+							</xsl:otherwise>
+						</xsl:choose>
                     </Property>
                     <Property Name ="INSTRUMENT_SHORT">
-                        <xsl:value-of select="@SECID"/>
+                        <xsl:choose>
+						<!-- USE FOR MOEX ISS FIXING RATE -->
+							<xsl:when test="@rate">
+								<xsl:value-of select="@secid"/>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="@SECID"/>
+							</xsl:otherwise>
+						</xsl:choose>
                     </Property>
                     <Property Name ="INSTRUMENT_NAME">
-                        <xsl:value-of select="@SECID"/>
+                        <xsl:choose>
+						<!-- USE FOR MOEX ISS FIXING RATE -->
+							<xsl:when test="@rate">
+								<xsl:value-of select="@secid"/>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="@SECID"/>
+							</xsl:otherwise>
+						</xsl:choose>
                     </Property>
 					<Property Name ="C$DATE">
                         <xsl:choose>
@@ -47,6 +79,25 @@
                     </Property>
                     <Property Name ="C$PROOF">
                         <xsl:value-of select="1"/>
+                    </Property>
+					<Property Name ="C$DATE">
+                        <xsl:choose>
+                            <xsl:when test="@TRADEDATE">
+                                <xsl:value-of select="@TRADEDATE"/>
+                            </xsl:when>
+							<xsl:when test="@SYSTIME">
+                                <xsl:value-of select="@SYSTIME"/>
+                            </xsl:when>
+							<xsl:when test="@PREVDATE">
+                                <xsl:value-of select="@PREVDATE"/>
+                            </xsl:when>
+							<xsl:otherwise>
+                                <xsl:variable name="vToday">
+								<xsl:value-of select="current-dateTime()"/>
+								</xsl:variable>
+								<xsl:value-of select="substring($vToday, 1, 10)"/>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </Property>
                     <Property Name ="BID">
                         <xsl:value-of select="@BID"/>
@@ -107,6 +158,17 @@
 							</xsl:when>
 							<xsl:otherwise>
 								<xsl:value-of select="@LCURRENTPRICE"/>
+							</xsl:otherwise>
+						</xsl:choose>
+                    </Property>
+					<Property Name="LAST_PRICE">
+						<xsl:choose>
+						<!-- USE FOR MOEX ISS FIXING RATE -->
+							<xsl:when test="@rate">
+								<xsl:value-of select="@rate"/>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:value-of select="@LAST"/>
 							</xsl:otherwise>
 						</xsl:choose>
                     </Property>
