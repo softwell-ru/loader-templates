@@ -16,6 +16,9 @@
                     </Property>
                     <Property Name ="TRADING_PLACE_SHORT">
                         <xsl:choose>
+							<xsl:when test="@BOARDID='RFUD'">
+								<xsl:value-of select="'FORTS'"/>
+							</xsl:when>
 						<!-- USE FOR MOEX ISS FIXING RATE -->
 							<xsl:when test="@rate">
 								<xsl:value-of select="'FIXS'"/>
@@ -27,6 +30,9 @@
                     </Property>
                     <Property Name ="TRADING_PLACE_NAME">
                         <xsl:choose>
+							<xsl:when test="@BOARDID='RFUD'">
+								<xsl:value-of select="'FORTS'"/>
+							</xsl:when>
 						<!-- USE FOR MOEX ISS FIXING RATE -->
 							<xsl:when test="@rate">
 								<xsl:value-of select="'FIXS'"/>
@@ -79,25 +85,6 @@
                     </Property>
                     <Property Name ="C$PROOF">
                         <xsl:value-of select="1"/>
-                    </Property>
-					<Property Name ="C$DATE">
-                        <xsl:choose>
-                            <xsl:when test="@TRADEDATE">
-                                <xsl:value-of select="@TRADEDATE"/>
-                            </xsl:when>
-							<xsl:when test="@SYSTIME">
-                                <xsl:value-of select="@SYSTIME"/>
-                            </xsl:when>
-							<xsl:when test="@PREVDATE">
-                                <xsl:value-of select="@PREVDATE"/>
-                            </xsl:when>
-							<xsl:otherwise>
-                                <xsl:variable name="vToday">
-								<xsl:value-of select="current-dateTime()"/>
-								</xsl:variable>
-								<xsl:value-of select="substring($vToday, 1, 10)"/>
-                            </xsl:otherwise>
-                        </xsl:choose>
                     </Property>
                     <Property Name ="BID">
                         <xsl:value-of select="@BID"/>
