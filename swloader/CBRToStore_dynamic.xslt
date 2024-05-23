@@ -176,6 +176,12 @@
 						<xsl:text>.</xsl:text>
 						<xsl:value-of select="substring-after(Value, ',')"/>
 					</Property>
+					<Property Name ="LAST_PRICE">
+						<xsl:value-of select="substring-before(Value, ',')"/>
+						<xsl:text>.</xsl:text>
+						<xsl:value-of select="substring-after(Value, ',')"/>
+					</Property>
+
 					<Property Name ="FACEVALUE">
 						<xsl:value-of select="Nominal"/>
 					</Property>
