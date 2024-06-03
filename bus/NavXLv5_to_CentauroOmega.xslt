@@ -119,8 +119,14 @@
                     </xsl:value-of>
                 </Property>
 				<Property Name="SETTLEMENT_TYPE">
-                    <xsl:value-of select="Property[@Name='SETTLEMENT_TYPE']">
-                    </xsl:value-of>
+                    <xsl:choose>
+						<xsl:when test="(Property[@Name='SETTLEMENT_TYPE']=1)">
+							<xsl:value-of select="0"/>
+						</xsl:when>
+						<xsl:when test="(Property[@Name='SETTLEMENT_TYPE']=0)">
+							<xsl:value-of select="1"/>
+						</xsl:when>
+					</xsl:choose>
                 </Property>
 				<Property Name="MARGIN_CURRENCY">
                     <xsl:value-of select="Property[@Name='MARGIN_CURRENCY']">
