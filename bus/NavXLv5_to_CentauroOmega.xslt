@@ -1582,9 +1582,31 @@
                                 <Property Name="PORTFOLIO_ID">
                                     <xsl:value-of select="Property[@Name='PORTFOLIO_ID']"/>
                                 </Property>
-                                <Property Name="REPOBASE">
-                                    <xsl:value-of select="Property[@Name='REPOBASE']"/>
-                                </Property>
+								<Property Name="REPOBASE">
+									<xsl:choose>
+										<xsl:when test="(Property[@Name='REPOBASE']=2)">
+											<xsl:value-of select="1"/>
+										</xsl:when>
+										<xsl:when test="(Property[@Name='REPOBASE']=3)">
+											<xsl:value-of select="1"/>
+										</xsl:when>
+										<xsl:when test="(Property[@Name='REPOBASE']=7)">
+											<xsl:value-of select="1"/>
+										</xsl:when>
+										<xsl:when test="(Property[@Name='REPOBASE']=8)">
+											<xsl:value-of select="1"/>
+										</xsl:when>
+										<xsl:when test="(Property[@Name='REPOBASE']=10)">
+											<xsl:value-of select="1"/>
+										</xsl:when>
+										<xsl:when test="(Property[@Name='REPOBASE']=1)">
+											<xsl:value-of select="2"/>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:value-of select="0"/>
+										</xsl:otherwise>
+									</xsl:choose>
+								</Property>
                                 <Property Name="SETTL_SCHEME">
                                     <xsl:value-of select="Property[@Name='SETTL_SCHEME']"/>
                                 </Property>
