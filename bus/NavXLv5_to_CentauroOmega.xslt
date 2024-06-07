@@ -83,7 +83,7 @@
                     </xsl:value-of>
                 </Property>
 				<Property Name="BASE_INSTRUMENT">
-                    <xsl:value-of select="Property[@Name='BASE_INSTRUMENT']">
+                    <xsl:value-of select="Property[@Name='BASE_INSTRUMENT_EXCHANGE']">
                     </xsl:value-of>
                 </Property>
 				<Property Name="COUNT_BASE_INSTRUMENT">
