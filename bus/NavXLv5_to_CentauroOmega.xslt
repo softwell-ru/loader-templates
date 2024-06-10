@@ -82,7 +82,7 @@
                     <xsl:value-of select="Property[@Name='MATURITY_DATE']">
                     </xsl:value-of>
                 </Property>
-				<Property Name="BASE_INSTRUMENT">
+				<Property Name="BASE_INSTRUMENT_EXCHANGE">
                     <xsl:value-of select="Property[@Name='BASE_INSTRUMENT_EXCHANGE']">
                     </xsl:value-of>
                 </Property>
