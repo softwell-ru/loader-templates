@@ -245,12 +245,20 @@
                             </xsl:value-of>
                         </Property>
                         <Property Name="TICKET_ARRAY">
-                            <xsl:value-of select="Property[@Name='TICKET_ARRAY']">
-                            </xsl:value-of>
-                        </Property>
-						<Property Name="CURR_REL_NETT_TICKET_ARRAY">
-                            <xsl:value-of select="Property[@Name='CURR_REL_NETT_TICKET_ARRAY']">
-                            </xsl:value-of>
+                            <xsl:choose>
+                                <xsl:when test="(Property[@Name='NCC_TICKET_ARRAY'] !='')">
+                                    <xsl:value-of select="Property[@Name='NCC_TICKET_ARRAY']">
+                                    </xsl:value-of>
+                                </xsl:when>
+								<xsl:when test="(Property[@Name='CURR_REL_NETT_TICKET_ARRAY'] !='')">
+                                    <xsl:value-of select="Property[@Name='CURR_REL_NETT_TICKET_ARRAY']">
+                                    </xsl:value-of>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="Property[@Name='TICKET_ARRAY']">
+                                    </xsl:value-of>
+                                </xsl:otherwise>
+                            </xsl:choose>
                         </Property>
                         <Property Name="NETT_CURRENCY">
                             <xsl:value-of select="Property[@Name='NETT_CURRENCY']">
