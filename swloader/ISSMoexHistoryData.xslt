@@ -3,7 +3,7 @@
 	<xsl:output method="xml" encoding="windows-1251"/>
 	<xsl:strip-space elements="*"/>
 	<xsl:template match="data[@id='marketdata_yields']"/>
-	<xsl:template match="data[@id='secstats' or @id='marketdata' or @id='history']">
+	<xsl:template match="data[@id='secstats' or @id='marketdata' or @id='history' or @id='centralrates']">
 		<Pocket>
 			<Body_Pocket>
 				<xsl:for-each select="//row">
@@ -14,6 +14,12 @@
 						<Property Name="MARKET_NAME">
 							<xsl:value-of select="'MICEX'"/>
 						</Property>
+						<Property Name="MARKET_PLACE_NAME">
+							<xsl:value-of select="'MICEX'"/>
+						</Property>
+						<Property Name="MARKET_PLACE_CODE">
+							<xsl:value-of select="'MICEX'"/>
+						</Property>
 						<xsl:choose>
 							<xsl:when test="@BOARDID = 'RFUD'">
 								<Property Name="TRADING_PLACE_SHORT">
@@ -22,8 +28,24 @@
 								<Property Name="TRADING_PLACE_NAME">
 									<xsl:value-of select="'FORTS'"/>
 								</Property>
-								</xsl:when>
-								<xsl:otherwise>
+							</xsl:when>
+							<xsl:when test="@RATE">
+								<Property Name="TRADING_PLACE_SHORT">
+									<xsl:value-of select="'FIXS'"/>
+								</Property>
+								<Property Name="TRADING_PLACE_NAME">
+									<xsl:value-of select="'FIXS'"/>
+								</Property>
+							</xsl:when>
+							<xsl:when test="@PRICE">
+								<Property Name="TRADING_PLACE_SHORT">
+									<xsl:value-of select="'CENTRALRATES'"/>
+								</Property>
+								<Property Name="TRADING_PLACE_NAME">
+									<xsl:value-of select="'CENTRALRATES'"/>
+								</Property>
+							</xsl:when>
+							<xsl:otherwise>
 									<Property Name="TRADING_PLACE_SHORT">
 										<xsl:value-of select="@BOARDID"/>
 									</Property>
@@ -33,10 +55,28 @@
 								</xsl:otherwise>
 						</xsl:choose>
 						<Property Name="INSTRUMENT_SHORT">
-							<xsl:value-of select="@SECID"/>
+							<xsl:choose>
+								<xsl:when test="@SECID">
+									<xsl:value-of select="@SECID"/>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:value-of select="@FACEUNIT"/>
+									<xsl:text>/</xsl:text>
+									<xsl:value-of select="@CURRENCYID"/>
+								</xsl:otherwise>
+							</xsl:choose>
 						</Property>
 						<Property Name="INSTRUMENT_NAME">
-							<xsl:value-of select="@SECID"/>
+							<xsl:choose>
+								<xsl:when test="@SECID">
+									<xsl:value-of select="@SECID"/>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:value-of select="@FACEUNIT"/>
+									<xsl:text>/</xsl:text>
+									<xsl:value-of select="@CURRENCYID"/>
+								</xsl:otherwise>
+							</xsl:choose>
 						</Property>
 						<Property Name="C$DATE">
 							<xsl:choose>
@@ -113,6 +153,9 @@
 							<xsl:choose>
 								<xsl:when test="@LCURRENTPRICE">
 									<xsl:value-of select="@LCURRENTPRICE"/>
+								</xsl:when>
+								<xsl:when test="@PRICE">
+									<xsl:value-of select="@PRICE"/>
 								</xsl:when>
 								<xsl:otherwise>
 									<xsl:value-of select="@SETTLEPRICE"/>
