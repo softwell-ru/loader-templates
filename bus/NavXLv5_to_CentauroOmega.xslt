@@ -1642,6 +1642,9 @@
                                 <Property Name="COUPON_AMOUNT">
                                     <xsl:value-of select="Property[@Name='COUPON_AMOUNT']"/>
                                 </Property>
+								<Property Name="COUPON_AMOUNT_SECOND">
+                                    <xsl:value-of select="Property[@Name='COUPON_AMOUNT_SECOND']"/>
+                                </Property>
                                 <Property Name="PAYCURRENCY">
                                     <xsl:value-of select="Property[@Name='PAYCURRENCY']"/>
                                 </Property>
