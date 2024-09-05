@@ -52,10 +52,10 @@
                 <xsl:for-each select="/chart/data/voArray">
                     <Object Name="QUOTATION">
                         <Property Name ="TRADING_PLACE_SHORT">
-                            <xsl:value-of select="'NIFC_FXSWAP'"/>
+                            <xsl:value-of select="'NIFC'"/>
                         </Property>
                         <Property Name ="MARKET_NAME">
-                            <xsl:value-of select="'NIFC_FXSWAP'"/>
+                            <xsl:value-of select="'NIFC'"/>
                         </Property>
                         <Property Name ="MARKET_SHORT">
                             <xsl:value-of select="'NIFC'"/>
