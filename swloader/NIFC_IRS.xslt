@@ -12,10 +12,10 @@
                     <Object Name="QUOTATION">
                         <xsl:variable name="valid" select="@xid" />
                         <Property Name ="TRADING_PLACE_SHORT">
-                            <xsl:value-of select="'NIFC_IRS'"/>
+                            <xsl:value-of select="'NIFC'"/>
                         </Property>
                         <Property Name ="MARKET_NAME">
-                            <xsl:value-of select="'NIFC_IRS'"/>
+                            <xsl:value-of select="'NIFC'"/>
                         </Property>
                         <Property Name ="MARKET_SHORT">
                             <xsl:value-of select="'NIFC'"/>
