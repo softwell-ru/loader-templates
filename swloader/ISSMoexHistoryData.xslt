@@ -70,6 +70,10 @@
 							<xsl:choose>
 								<xsl:when test="@SECID">
 									<xsl:value-of select="@SECID"/>
+									<xsl:text>-</xsl:text>
+									<xsl:value-of select="@SHORTNAME"/>
+									<xsl:text>-</xsl:text>
+									<xsl:value-of select="@SECNAME"/>
 								</xsl:when>
 								<xsl:otherwise>
 									<xsl:value-of select="@FACEUNIT"/>
@@ -85,6 +89,9 @@
 								</xsl:when>
 								<xsl:when test="@SYSTIME">
 									<xsl:value-of select="@SYSTIME"/>
+								</xsl:when>
+								<xsl:when test="@IMTIME">
+									<xsl:value-of select="@IMTIME"/>
 								</xsl:when>
 								<xsl:when test="@PREVDATE">
 									<xsl:value-of select="@PREVDATE"/>
@@ -156,6 +163,9 @@
 								</xsl:when>
 								<xsl:when test="@PRICE">
 									<xsl:value-of select="@PRICE"/>
+								</xsl:when>
+								<xsl:when test="@LASTSETTLEPRICE">
+									<xsl:value-of select="@LASTSETTLEPRICE"/>
 								</xsl:when>
 								<xsl:otherwise>
 									<xsl:value-of select="@SETTLEPRICE"/>
