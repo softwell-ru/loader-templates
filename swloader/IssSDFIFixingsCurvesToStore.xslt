@@ -7,7 +7,7 @@
             <Body_Pocket>
             <xsl:for-each select="//row">
                 <xsl:if test="not(@value='0')">
-                    <xsl:if test="(@level=&quot;Regular&quot;) or (@level=&quot;ProxyCurve&quot;)">
+                    <xsl:if test="(@level=&quot;Regular&quot;) or (@level=&quot;ProxyCurve&quot;) or (@level=&quot;ParallelShift&quot;)">
                         <Object Name="QUOTATION">
                             <Property Name ="MARKET_SHORT">
                                 <xsl:value-of select="'MICEX'"/>
