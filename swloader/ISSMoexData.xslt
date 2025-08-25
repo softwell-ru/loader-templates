@@ -135,7 +135,17 @@
 							<xsl:value-of select="@NUMTRADES"/>
 						</Property>
 						<Property Name="LAST_PRICE">
-							<xsl:value-of select="@PREVPRICE"/>
+							<xsl:choose>
+								<xsl:when test="@LAST">
+									<xsl:value-of select="@LAST"/>
+								</xsl:when>
+								<xsl:when test="@RATE">
+									<xsl:value-of select="@RATE"/>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:value-of select="@PREVPRICE"/>
+								</xsl:otherwise>
+							</xsl:choose>
 						</Property>
 						<Property Name="CLOSE_PRICE">
 							<xsl:choose>
