@@ -147,11 +147,11 @@
 								<xsl:when test="@LAST">
 									<xsl:value-of select="@LAST"/>
 								</xsl:when>
-								<xsl:when test="@LASTVALUE">
-									<xsl:value-of select="@LASTVALUE"/>
-								</xsl:when>
 								<xsl:when test="@RATE">
 									<xsl:value-of select="@RATE"/>
+								</xsl:when>
+								<xsl:when test="@LASTVALUE">
+									<xsl:value-of select="@LASTVALUE"/>
 								</xsl:when>
 								<xsl:otherwise>
 									<xsl:value-of select="@PREVPRICE"/>
