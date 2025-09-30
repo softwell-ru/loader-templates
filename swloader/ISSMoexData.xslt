@@ -29,6 +29,14 @@
 									<xsl:value-of select="'FORTS'"/>
 								</Property>
 							</xsl:when>
+							<xsl:when test="@BOARDID = 'SNDX'">
+								<Property Name="TRADING_PLACE_SHORT">
+									<xsl:value-of select="'FORTS'"/>
+								</Property>
+								<Property Name="TRADING_PLACE_NAME">
+									<xsl:value-of select="'FORTS'"/>
+								</Property>
+							</xsl:when>
 							<xsl:when test="@RATE">
 								<Property Name="TRADING_PLACE_SHORT">
 									<xsl:value-of select="'FIXS'"/>
@@ -113,6 +121,9 @@
 						<Property Name="ASK">
 							<xsl:value-of select="@OFFER"/>
 						</Property>
+						<Property Name="OFFER">
+							<xsl:value-of select="@OFFER"/>
+						</Property>
 						<Property Name="LOW">
 							<xsl:value-of select="@LOW"/>
 						</Property>
@@ -121,9 +132,6 @@
 						</Property>
 						<Property Name="OPEN">
 							<xsl:value-of select="@OPEN"/>
-						</Property>
-						<Property Name="OFFER">
-							<xsl:value-of select="@OFFER"/>
 						</Property>
 						<Property Name="LOWOFFER">
 							<xsl:value-of select="@LOWOFFER"/>
@@ -138,6 +146,9 @@
 							<xsl:choose>
 								<xsl:when test="@LAST">
 									<xsl:value-of select="@LAST"/>
+								</xsl:when>
+								<xsl:when test="@LASTVALUE">
+									<xsl:value-of select="@LASTVALUE"/>
 								</xsl:when>
 								<xsl:when test="@RATE">
 									<xsl:value-of select="@RATE"/>
@@ -175,6 +186,9 @@
 									<xsl:value-of select="@PRICE"/>
 								</xsl:when>
 								<xsl:when test="@LASTSETTLEPRICE">
+									<xsl:value-of select="@LASTSETTLEPRICE"/>
+								</xsl:when>
+								<xsl:when test="@CURRENTVALUE">
 									<xsl:value-of select="@LASTSETTLEPRICE"/>
 								</xsl:when>
 								<xsl:otherwise>
